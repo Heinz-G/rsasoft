@@ -1,570 +1,558 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { 
-  ArrowRight, 
-  Check, 
-  Quote, 
-  Award, 
-  TrendingUp,
-  FileText,
-  Mail,
-  Zap,
-  Building2,
-  Plug,
-  BarChart3,
-  Code,
-  Package,
-  Clock,
+import {
+  ArrowRight,
+  Check,
+  Target,
   Shield,
-  Target
+  Clock,
+  Zap,
+  Server,
+  Network,
+  ChevronRight,
 } from "lucide-react";
-import { 
-  stats, 
-  solutions, 
-  painPoints, 
-  processSteps, 
-  featuredClients,
-  retailerIntegrations,
-  allClients,
-  erpSystems,
-  partnerships,
-  guarantee,
-  valueEquation,
+import {
+  CopyVersion,
   copyVariants,
-  type CopyVersion
+  heroData,
+  painPoints,
+  flagshipStages,
+  flagshipStats,
+  flagshipAdditionalIntegrations,
+  products,
+  solutions,
+  integrationEcosystem,
+  valueProposition,
+  process,
+  guarantee,
 } from "@/data/company-data";
 
-// Toggle this to switch between full disclosure and safe copy
-const COPY_VERSION: CopyVersion = "full"; // Change to "safe" for anonymous version
+// ============================================================================
+// COPY VERSION TOGGLE - Change this to switch between full and safe versions
+// ============================================================================
+const COPY_VERSION: CopyVersion = "full";
 
-export default function Home() {
-  const copy = copyVariants[COPY_VERSION];
-  const [visibleSections, setVisibleSections] = useState<Record<string, boolean>>({});
-  const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
+const copy = copyVariants[COPY_VERSION];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisibleSections((prev) => ({
-              ...prev,
-              [entry.target.id]: true,
-            }));
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: "-50px" }
-    );
+// Icon mapping for value proposition
+const iconMap: Record<string, React.ElementType> = {
+  target: Target,
+  shield: Shield,
+  clock: Clock,
+  zap: Zap,
+};
 
-    Object.values(sectionRefs.current).forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
-  const setSectionRef = (id: string) => (el: HTMLElement | null) => {
-    sectionRefs.current[id] = el;
-  };
-
+export default function HomePage() {
   return (
     <main className="min-h-screen bg-[#0a0f14] text-slate-200">
       <Navbar copyVersion={COPY_VERSION} />
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-20 overflow-hidden grid-pattern noise-overlay">
+      {/* ================================================================== */}
+      {/* HERO SECTION */}
+      {/* ================================================================== */}
+      <section className="pt-32 pb-20 relative grid-pattern noise-overlay">
         <div className="absolute top-1/4 right-0 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-slate-700/20 rounded-full blur-3xl" />
-        <div className="absolute top-32 right-20 w-px h-48 bg-gradient-to-b from-amber-500/50 to-transparent hidden lg:block" />
+        <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl" />
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-24 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl">
             {/* Award Badge */}
-            <div
-              className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/10 border border-amber-500/30 rounded-full mb-6 opacity-0 animate-fade-up"
-              style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}
-            >
-              <Award className="w-4 h-4 text-amber-500" />
-              <span className="text-sm text-amber-400 font-medium">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 mb-8">
+              <div className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+              <span className="text-xs font-medium text-amber-400">
                 {copy.heroAward}
               </span>
             </div>
 
-            {/* Headline - Hormozi style: lead with the problem */}
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold leading-[1.1] mb-8">
-              <span
-                className="block text-slate-100 opacity-0 animate-fade-up"
-                style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}
-              >
-                Your ERP Has The Data.
-              </span>
-              <span
-                className="block text-slate-100 opacity-0 animate-fade-up"
-                style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
-              >
-                You Just Can't Get To It
-              </span>
-              <span
-                className="block text-slate-500 opacity-0 animate-fade-up"
-                style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
-              >
-                Fast Enough To Matter.
-              </span>
+            {/* Headline */}
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold text-slate-100 mb-6 leading-tight">
+              {heroData.headline.line1}
+              <br />
+              <span className="text-amber-gradient">{heroData.headline.line2}</span>
+              <br />
+              {heroData.headline.line3}
             </h1>
 
-            {/* Subhead - specific, credible */}
-            <p
-              className="text-lg sm:text-xl text-slate-400 max-w-2xl mb-10 leading-relaxed opacity-0 animate-fade-up"
-              style={{ animationDelay: "0.5s", animationFillMode: "forwards" }}
-            >
+            {/* Subhead */}
+            <p className="text-lg text-slate-400 mb-8 leading-relaxed max-w-3xl">
               {copy.heroSubhead}
             </p>
 
             {/* CTAs */}
-            <div
-              className="flex flex-wrap gap-4 mb-16 opacity-0 animate-fade-up"
-              style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}
-            >
+            <div className="flex flex-wrap gap-4 mb-12">
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-[#0a0f14] font-semibold px-8 py-4 rounded text-base transition-all hover:shadow-lg hover:shadow-amber-500/25"
               >
-                Get Your Free ERP Audit
+                {heroData.primaryCta}
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                href="/dashboards"
-                className="inline-flex items-center gap-2 border border-slate-700 text-slate-300 hover:border-amber-500 hover:text-amber-400 px-8 py-4 rounded text-base transition-all bg-transparent"
+                href="#flagship"
+                className="inline-flex items-center gap-2 border border-slate-600 hover:border-slate-500 text-slate-300 hover:text-slate-100 px-8 py-4 rounded text-base transition-all"
               >
-                See 60+ Ready Dashboards
+                {heroData.secondaryCta}
+                <ChevronRight className="w-4 h-4" />
               </Link>
             </div>
 
-            {/* Trust signals - specific, not generic */}
-            <div
-              className="opacity-0 animate-fade-up"
-              style={{ animationDelay: "0.7s", animationFillMode: "forwards" }}
-            >
-              <div className="flex flex-wrap items-center gap-6 text-sm text-slate-500">
-                <span className="flex items-center gap-2">
+            {/* Trust Signals */}
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-500">
+              {heroData.trustSignals.map((signal, i) => (
+                <span key={i} className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-emerald-500" />
-                  SYSPRO • Sage • SAP
+                  {signal}
                 </span>
-                <span className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-500" />
-                  TransLution Partner
-                </span>
-                <span className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-500" />
-                  n8n Automation
-                </span>
-                <span className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-500" />
-                  60+ Active Clients
-                </span>
-              </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* The Problem Section - Hormozi: articulate the pain */}
-      <section
-        id="problem"
-        ref={setSectionRef("problem")}
-        className="py-24 lg:py-32 relative"
-      >
+      {/* ================================================================== */}
+      {/* PAIN POINTS - THE REAL COST */}
+      {/* ================================================================== */}
+      <section className="py-20 bg-slate-900/30">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className={`reveal ${visibleSections.problem ? "visible" : ""}`}>
-            <p className="font-mono text-xs tracking-widest text-rose-500 mb-4">THE REAL COST</p>
-            
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-100 mb-6 max-w-3xl leading-tight">
-              Every Day You're Losing Money on Work That Shouldn't Exist
-            </h2>
+          <p className="font-mono text-xs tracking-widest text-amber-500 mb-4">
+            THE REAL COST
+          </p>
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold text-slate-100 mb-12">
+            Every Day You're Losing Money on Work That Shouldn't Exist
+          </h2>
 
-            <div className="grid lg:grid-cols-2 gap-8 mt-12">
-              {painPoints.map((point, i) => (
-                <div
-                  key={point.title}
-                  className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/30 p-8 rounded-lg hover:border-rose-500/30 transition-all"
-                >
-                  <h3 className="font-display text-xl font-medium text-slate-200 mb-3">
-                    {point.title}
-                  </h3>
-                  <p className="text-slate-400 mb-4 leading-relaxed">
-                    {point.problem}
-                  </p>
-                  <p className="text-sm text-rose-400 font-medium">
+          <div className="grid md:grid-cols-2 gap-6">
+            {painPoints.map((point, i) => (
+              <div
+                key={i}
+                className="bg-slate-900/50 border border-slate-700/30 rounded-lg p-6 hover:border-red-500/30 transition-all"
+              >
+                <h3 className="font-display text-lg font-medium text-slate-200 mb-3">
+                  "{point.title}"
+                </h3>
+                <p className="text-sm text-slate-400 mb-4 leading-relaxed">
+                  {point.problem}
+                </p>
+                <div className="border-t border-slate-700/30 pt-4">
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    <span className="text-amber-500 font-medium">The cost:</span>{" "}
                     {point.cost}
                   </p>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Flagship Case Study */}
-      <section
-        id="case-study"
-        ref={setSectionRef("case-study")}
-        className="py-24 lg:py-32 relative bg-gradient-to-b from-slate-900/50 to-transparent"
-      >
+      {/* ================================================================== */}
+      {/* FLAGSHIP CASE STUDY */}
+      {/* ================================================================== */}
+      <section id="flagship" className="py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className={`reveal ${visibleSections["case-study"] ? "visible" : ""}`}>
-            <div className="flex items-center gap-2 mb-4">
-              <Award className="w-4 h-4 text-amber-500" />
-              <p className="font-mono text-xs tracking-widest text-amber-500">FLAGSHIP PROJECT</p>
+          <p className="font-mono text-xs tracking-widest text-amber-500 mb-4">
+            {copy.flagshipLabel}
+          </p>
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold text-slate-100 mb-8">
+            {copy.flagshipHeadline}
+          </h2>
+
+          {/* The Story */}
+          <div className="max-w-3xl mb-12">
+            {copy.flagshipStory.map((paragraph, i) => (
+              <p key={i} className="text-slate-400 mb-4 leading-relaxed">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+
+          {/* Stats Bar */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
+            {flagshipStats.map((stat, i) => (
+              <div
+                key={i}
+                className="bg-slate-900/50 border border-slate-700/30 rounded-lg p-4 text-center"
+              >
+                <div className="text-amber-gradient font-display text-2xl font-bold mb-1">
+                  {stat.value}
+                </div>
+                <div className="text-xs text-slate-500">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* 12 Stages */}
+          <div className="mb-12">
+            <h3 className="font-display text-xl font-medium text-slate-200 mb-6">
+              12 Automated Stages. Zero Manual Handoffs.
+            </h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {flagshipStages.map((stage) => (
+                <div
+                  key={stage.number}
+                  className="bg-slate-900/30 border border-slate-700/20 rounded p-4 flex gap-4"
+                >
+                  <div className="text-amber-500 font-mono text-sm font-bold">
+                    {stage.number}
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-slate-300 mb-1">
+                      {stage.title}
+                    </div>
+                    <div className="text-xs text-slate-500">{stage.description}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Additional Integrations */}
+          <div className="bg-slate-900/50 border border-slate-700/30 rounded-lg p-6">
+            <h4 className="text-sm font-medium text-slate-300 mb-4">
+              Additional Integrations Built:
+            </h4>
+            <ul className="space-y-2">
+              {flagshipAdditionalIntegrations.map((item, i) => (
+                <li key={i} className="flex items-start gap-2 text-sm text-slate-400">
+                  <Check className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================== */}
+      {/* PRODUCTS - RSI & RSATalk */}
+      {/* ================================================================== */}
+      <section className="py-20 bg-slate-900/30">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <p className="font-mono text-xs tracking-widest text-amber-500 mb-4">
+            THE ENGINES BEHIND IT
+          </p>
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold text-slate-100 mb-4">
+            Two Products. 1.5 Million Transactions.
+          </h2>
+          <p className="text-slate-400 mb-12">
+            90% of our clients run on RSI. If you're on SYSPRO, these change everything.
+          </p>
+
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* RSI */}
+            <div className="bg-slate-900/80 border border-slate-700/30 rounded-lg p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <Server className="w-8 h-8 text-amber-500" />
+                <div>
+                  <h3 className="font-display text-xl font-medium text-slate-100">
+                    {products.rsi.name}
+                  </h3>
+                  <p className="text-sm text-slate-400">{products.rsi.tagline}</p>
+                </div>
+              </div>
+
+              <p className="text-slate-400 mb-6 leading-relaxed">
+                {products.rsi.description}
+              </p>
+
+              <div className="mb-6">
+                <p className="text-xs text-slate-500 mb-3">How it works:</p>
+                <ul className="space-y-2">
+                  {products.rsi.howItWorks.map((step, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm text-slate-400">
+                      <Check className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
+                      {step}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="bg-emerald-500/10 border border-emerald-500/20 rounded p-4 mb-4">
+                <p className="text-sm text-emerald-400">{products.rsi.proof}</p>
+              </div>
+
+              <p className="text-xs text-slate-500">
+                <span className="text-amber-500">Key capability:</span> {products.rsi.keyCapability}
+              </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-100 mb-6 leading-tight">
-                  {copy.otdHeadline}
-                </h2>
-                
-                <p className="text-lg text-slate-400 mb-6 leading-relaxed">
-                  {copy.otdSubhead}
-                </p>
+            {/* RSATalk */}
+            <div className="bg-slate-900/80 border border-slate-700/30 rounded-lg p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <Network className="w-8 h-8 text-amber-500" />
+                <div>
+                  <h3 className="font-display text-xl font-medium text-slate-100">
+                    {products.rsatalk.name}
+                  </h3>
+                  <p className="text-sm text-slate-400">{products.rsatalk.tagline}</p>
+                </div>
+              </div>
 
-                <p className="text-slate-400 mb-6 leading-relaxed">
-                  {copy.otdClient} {copy.otdDescription}. The integration had to be bulletproof.
-                </p>
+              <p className="text-slate-400 mb-6 leading-relaxed">
+                {products.rsatalk.description}
+              </p>
 
-                <div className="space-y-4 mb-8">
-                  {[
-                    "58,014+ Pick n Pay purchase orders processed since August 2024",
-                    "460,000+ sales orders created automatically from forecasts",
-                    "Custom SSRS invoice automation for SPAR—10,000+ emails/month",
-                    "Zero integration failures—100% uptime since go-live"
-                  ].map((stat, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-slate-300">{stat}</span>
-                    </div>
+              <div className="mb-6">
+                <p className="text-xs text-slate-500 mb-3">Components:</p>
+                <ul className="space-y-3">
+                  {products.rsatalk.components.map((comp, i) => (
+                    <li key={i} className="text-sm">
+                      <span className="text-slate-300 font-medium">{comp.name}</span>
+                      <span className="text-slate-500"> — {comp.desc}</span>
+                    </li>
                   ))}
+                </ul>
+              </div>
+
+              <div className="bg-emerald-500/10 border border-emerald-500/20 rounded p-4 mb-4">
+                <p className="text-sm text-emerald-400">{products.rsatalk.proof}</p>
+              </div>
+
+              <p className="text-xs text-slate-500">
+                <span className="text-amber-500">Key capability:</span> {products.rsatalk.keyCapability}
+              </p>
+            </div>
+          </div>
+
+          <p className="text-center text-sm text-slate-500 mt-8">
+            {products.licensingNote}
+          </p>
+        </div>
+      </section>
+
+      {/* ================================================================== */}
+      {/* SOLUTIONS */}
+      {/* ================================================================== */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <p className="font-mono text-xs tracking-widest text-amber-500 mb-4">
+            WHAT WE BUILD
+          </p>
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold text-slate-100 mb-12">
+            Four Ways to Get Your Time Back
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {solutions.map((solution) => (
+              <div
+                key={solution.number}
+                className="bg-slate-900/50 border border-slate-700/30 rounded-lg p-6 hover:border-amber-500/30 transition-all group"
+              >
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="text-amber-gradient font-display text-3xl font-bold">
+                    {solution.number}
+                  </div>
+                  <div>
+                    <h3 className="font-display text-lg font-medium text-slate-200 mb-2">
+                      {solution.title}
+                    </h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">
+                      {solution.destination}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="space-y-3 mb-4">
+                  <p className="text-xs text-slate-500">
+                    <span className="text-slate-400">How:</span> {solution.how}
+                  </p>
+                  <p className="text-xs text-slate-500">
+                    <span className="text-emerald-500">Proof:</span> {solution.proof}
+                  </p>
                 </div>
 
                 <Link
-                  href="/integrations"
-                  className="inline-flex items-center gap-2 text-amber-500 hover:text-amber-400 font-medium transition-colors group"
+                  href={solution.href}
+                  className="inline-flex items-center gap-1 text-sm text-amber-500 hover:text-amber-400 transition-colors"
                 >
-                  See how we build retail integrations
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  {solution.cta}
+                  <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
-
-              {/* Stats Card */}
-              <div className="bg-slate-900/80 border border-amber-500/30 rounded-2xl p-8 lg:p-10">
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="text-center p-4 bg-slate-800/50 rounded-lg">
-                    <div className="text-amber-gradient font-display text-3xl sm:text-4xl font-bold mb-1">58K+</div>
-                    <div className="text-sm text-slate-400">PnP Orders</div>
-                  </div>
-                  <div className="text-center p-4 bg-slate-800/50 rounded-lg">
-                    <div className="text-amber-gradient font-display text-3xl sm:text-4xl font-bold mb-1">460K+</div>
-                    <div className="text-sm text-slate-400">Sales Orders</div>
-                  </div>
-                  <div className="text-center p-4 bg-slate-800/50 rounded-lg">
-                    <div className="text-amber-gradient font-display text-3xl sm:text-4xl font-bold mb-1">10K+</div>
-                    <div className="text-sm text-slate-400">Emails/Month</div>
-                  </div>
-                  <div className="text-center p-4 bg-slate-800/50 rounded-lg">
-                    <div className="text-amber-gradient font-display text-3xl sm:text-4xl font-bold mb-1">100%</div>
-                    <div className="text-sm text-slate-400">Uptime</div>
-                  </div>
-                </div>
-
-                <div className="mt-6 p-4 bg-amber-500/10 rounded-lg">
-                  <p className="text-sm text-amber-400">
-                    <strong>The SPAR automation:</strong> We built a system that programmatically calls SSRS reports, 
-                    generates branded PDF invoices, and emails them automatically—10,000+ per month with zero manual intervention.
-                  </p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Solutions Section - Hormozi: sell the destination */}
-      <section
-        id="solutions"
-        ref={setSectionRef("solutions")}
-        className="py-24 lg:py-32 relative bg-slate-900/30"
-      >
+      {/* ================================================================== */}
+      {/* INTEGRATION ECOSYSTEM */}
+      {/* ================================================================== */}
+      <section className="py-20 bg-slate-900/30">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className={`reveal ${visibleSections.solutions ? "visible" : ""}`}>
-            <p className="font-mono text-xs tracking-widest text-amber-500 mb-4">WHAT WE BUILD</p>
-            
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-100 mb-6 max-w-3xl leading-tight">
-              Four Ways to Get Your Time Back
-            </h2>
-            
-            <p className="text-lg text-slate-400 max-w-2xl mb-12">
-              We've built 100+ custom applications across these categories. Pick what hurts most—we'll fix it first.
-            </p>
+          <p className="font-mono text-xs tracking-widest text-amber-500 mb-4">
+            INTEGRATION ECOSYSTEM
+          </p>
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold text-slate-100 mb-12">
+            We Connect Everything to Everything
+          </h2>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              {solutions.map((solution) => (
-                <div
-                  key={solution.num}
-                  className="bg-slate-900/80 border border-slate-700/30 rounded-lg p-8 hover:border-amber-500/40 transition-all group"
-                >
-                  <div className="flex items-start justify-between mb-4">
-                    <span className="font-mono text-4xl font-medium text-slate-800 group-hover:text-amber-500/30 transition-colors">
-                      {solution.num}
-                    </span>
-                  </div>
-                  
-                  <h3 className="font-mono text-sm tracking-wider text-amber-500 mb-3">
-                    {solution.title}
-                  </h3>
-                  
-                  <p className="text-lg text-slate-200 mb-3 font-medium">
-                    {solution.destination}
-                  </p>
-                  
-                  <p className="text-sm text-slate-400 mb-4">
-                    {solution.how}
-                  </p>
-                  
-                  <p className="text-sm text-emerald-400 mb-6">
-                    {solution.proof}
-                  </p>
-                  
-                  <Link
-                    href={`/${solution.slug}`}
-                    className="inline-flex items-center gap-2 text-amber-500 hover:text-amber-400 font-medium transition-colors text-sm group/link"
-                  >
-                    {solution.cta}
-                    <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Integration Ecosystem */}
-      <section
-        id="ecosystem"
-        ref={setSectionRef("ecosystem")}
-        className="py-24 lg:py-32 relative"
-      >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className={`reveal ${visibleSections.ecosystem ? "visible" : ""}`}>
-            <p className="font-mono text-xs tracking-widest text-amber-500 mb-4">INTEGRATION ECOSYSTEM</p>
-            
-            <h2 className="font-display text-3xl sm:text-4xl font-semibold text-slate-100 mb-12">
-              We Connect Everything to Everything
-            </h2>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {/* ERP Systems */}
-              <div className="bg-slate-900/50 border border-slate-700/30 rounded-lg p-6">
-                <h3 className="font-display text-lg font-medium text-slate-200 mb-4 flex items-center gap-2">
-                  <BarChart3 className="w-5 h-5 text-amber-500" />
-                  ERP Systems
-                </h3>
-                <div className="space-y-3">
-                  {erpSystems.map((erp) => (
-                    <div key={erp.name} className="flex justify-between items-start">
-                      <div>
-                        <span className="text-slate-300 font-medium">{erp.name}</span>
-                        <p className="text-xs text-slate-500">{erp.description}</p>
-                      </div>
-                      <span className="text-xs px-2 py-1 bg-emerald-500/20 text-emerald-400 rounded">
-                        {erp.status}
-                      </span>
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* ERP Systems */}
+            <div>
+              <h3 className="text-sm font-medium text-slate-300 mb-4 pb-2 border-b border-slate-700/30">
+                ERP Systems
+              </h3>
+              <ul className="space-y-3">
+                {integrationEcosystem.erpSystems.map((erp, i) => (
+                  <li key={i} className="text-sm">
+                    <div className="text-slate-200 font-medium">{erp.name}</div>
+                    <div className="text-xs text-slate-500">
+                      {erp.status} — {erp.detail}
                     </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Retailers */}
-              <div className="bg-slate-900/50 border border-slate-700/30 rounded-lg p-6">
-                <h3 className="font-display text-lg font-medium text-slate-200 mb-4 flex items-center gap-2">
-                  <Building2 className="w-5 h-5 text-amber-500" />
-                  Retail EDI
-                </h3>
-                <div className="space-y-2">
-                  {retailerIntegrations.slice(0, 6).map((retailer) => (
-                    <div key={retailer.name} className="flex justify-between items-center">
-                      <span className="text-slate-400 text-sm">{retailer.name}</span>
-                      <Check className="w-4 h-4 text-emerald-500" />
-                    </div>
-                  ))}
-                  <p className="text-xs text-slate-500 mt-2">+ more</p>
-                </div>
-              </div>
-
-              {/* Partnerships */}
-              <div className="bg-slate-900/50 border border-slate-700/30 rounded-lg p-6">
-                <h3 className="font-display text-lg font-medium text-slate-200 mb-4 flex items-center gap-2">
-                  <Plug className="w-5 h-5 text-amber-500" />
-                  Partnerships
-                </h3>
-                <div className="space-y-3">
-                  {partnerships.map((partner) => (
-                    <div key={partner.name}>
-                      <div className="flex justify-between items-center mb-1">
-                        <span className="text-slate-300 font-medium">{partner.name}</span>
-                        <span className="text-xs text-amber-400">{partner.type}</span>
-                      </div>
-                      <p className="text-xs text-slate-500">{partner.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Value Equation Section - Hormozi framework */}
-      <section
-        id="value"
-        ref={setSectionRef("value")}
-        className="py-24 lg:py-32 relative bg-slate-900/30"
-      >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className={`reveal ${visibleSections.value ? "visible" : ""}`}>
-            <p className="font-mono text-xs tracking-widest text-amber-500 mb-4">WHY US</p>
-            
-            <h2 className="font-display text-3xl sm:text-4xl font-semibold text-slate-100 mb-12">
-              The RSASoft Difference
-            </h2>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="text-center p-6">
-                <Target className="w-10 h-10 text-amber-500 mx-auto mb-4" />
-                <h3 className="font-display text-lg font-medium text-slate-200 mb-2">
-                  {valueEquation.dreamOutcome.headline}
-                </h3>
-                <p className="text-sm text-slate-400">
-                  {valueEquation.dreamOutcome.description}
-                </p>
-              </div>
-              <div className="text-center p-6">
-                <Shield className="w-10 h-10 text-amber-500 mx-auto mb-4" />
-                <h3 className="font-display text-lg font-medium text-slate-200 mb-2">
-                  {valueEquation.likelihood.headline}
-                </h3>
-                <p className="text-sm text-slate-400">
-                  {valueEquation.likelihood.description}
-                </p>
-              </div>
-              <div className="text-center p-6">
-                <Clock className="w-10 h-10 text-amber-500 mx-auto mb-4" />
-                <h3 className="font-display text-lg font-medium text-slate-200 mb-2">
-                  {valueEquation.timeDelay.headline}
-                </h3>
-                <p className="text-sm text-slate-400">
-                  {valueEquation.timeDelay.description}
-                </p>
-              </div>
-              <div className="text-center p-6">
-                <Zap className="w-10 h-10 text-amber-500 mx-auto mb-4" />
-                <h3 className="font-display text-lg font-medium text-slate-200 mb-2">
-                  {valueEquation.effort.headline}
-                </h3>
-                <p className="text-sm text-slate-400">
-                  {valueEquation.effort.description}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section
-        id="process"
-        ref={setSectionRef("process")}
-        className="py-24 lg:py-32 relative"
-      >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className={`reveal ${visibleSections.process ? "visible" : ""}`}>
-            <p className="font-mono text-xs tracking-widest text-amber-500 mb-4">HOW IT WORKS</p>
-            
-            <h2 className="font-display text-3xl sm:text-4xl font-semibold text-slate-100 mb-12">
-              From Problem to Solution in 4 Steps
-            </h2>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {processSteps.map((step) => (
-                <div key={step.num} className="relative">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-full border-2 border-amber-500/50 flex items-center justify-center bg-slate-900">
-                      <span className="font-mono text-amber-500 font-medium">{step.num}</span>
-                    </div>
-                    <span className="font-mono text-xs text-slate-500">{step.timeframe}</span>
-                  </div>
-                  
-                  <h3 className="font-display text-lg font-medium text-slate-200 mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-sm text-slate-400 mb-2">
-                    {step.description}
-                  </p>
-                  <p className="text-xs text-slate-500">
-                    {step.effort}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA - Guarantee Section */}
-      <section
-        id="cta"
-        ref={setSectionRef("cta")}
-        className="py-24 lg:py-32 relative bg-slate-900/30"
-      >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className={`reveal ${visibleSections.cta ? "visible" : ""}`}>
-            <div className="max-w-3xl mx-auto text-center">
-              <p className="font-mono text-xs tracking-widest text-emerald-500 mb-4">THE GUARANTEE</p>
-              
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-100 mb-8 leading-tight">
-                {guarantee.headline}
-              </h2>
-
-              <p className="text-lg text-slate-400 mb-8">
-                {guarantee.subhead}
-              </p>
-
-              <div className="text-left bg-slate-900/80 border border-slate-700/30 rounded-lg p-8 mb-8">
-                {guarantee.terms.map((term, i) => (
-                  <div key={i} className="flex items-start gap-3 mb-4 last:mb-0">
-                    <Check className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-slate-300">{term}</span>
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
+            </div>
 
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-[#0a0f14] font-semibold px-10 py-5 rounded text-lg transition-all hover:shadow-lg hover:shadow-amber-500/25 amber-glow"
-              >
-                Get Your Free ERP Audit
-                <ArrowRight className="w-5 h-5" />
-              </Link>
+            {/* Retail EDI */}
+            <div>
+              <h3 className="text-sm font-medium text-slate-300 mb-4 pb-2 border-b border-slate-700/30">
+                Retail EDI
+              </h3>
+              <ul className="space-y-2">
+                {integrationEcosystem.retailEdi.map((retailer, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm">
+                    <span className="text-emerald-500">{retailer.status}</span>
+                    <div>
+                      <span className="text-slate-300">{retailer.name}</span>
+                      <span className="text-slate-500 text-xs block">{retailer.detail}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-              <p className="mt-6 text-sm text-slate-500">
-                {guarantee.scarcity}
-              </p>
+            {/* Partners */}
+            <div>
+              <h3 className="text-sm font-medium text-slate-300 mb-4 pb-2 border-b border-slate-700/30">
+                Technology Partners
+              </h3>
+              <ul className="space-y-3">
+                {integrationEcosystem.partners.map((partner, i) => (
+                  <li key={i} className="text-sm">
+                    <div className="text-slate-200 font-medium">{partner.name}</div>
+                    <div className="text-xs text-slate-500">
+                      {partner.status} — {partner.detail}
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ================================================================== */}
+      {/* VALUE PROPOSITION - WHY US */}
+      {/* ================================================================== */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <p className="font-mono text-xs tracking-widest text-amber-500 mb-4">
+            WHY US
+          </p>
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold text-slate-100 mb-12">
+            The RSASoft Difference
+          </h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {valueProposition.map((item, i) => {
+              const Icon = iconMap[item.icon] || Target;
+              return (
+                <div
+                  key={i}
+                  className="bg-slate-900/50 border border-slate-700/30 rounded-lg p-6"
+                >
+                  <Icon className="w-8 h-8 text-amber-500 mb-4" />
+                  <h3 className="font-display text-lg font-medium text-slate-200 mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-slate-400 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================== */}
+      {/* PROCESS - HOW IT WORKS */}
+      {/* ================================================================== */}
+      <section className="py-20 bg-slate-900/30">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <p className="font-mono text-xs tracking-widest text-amber-500 mb-4">
+            HOW IT WORKS
+          </p>
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold text-slate-100 mb-12">
+            From Problem to Solution
+          </h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {process.map((step) => (
+              <div
+                key={step.number}
+                className="bg-slate-900/80 border border-slate-700/30 rounded-lg p-6"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="text-amber-gradient font-display text-2xl font-bold">
+                    {step.number}
+                  </div>
+                  <div className="text-xs text-slate-500 px-2 py-1 bg-slate-800/50 rounded">
+                    {step.timeframe}
+                  </div>
+                </div>
+                <h3 className="font-display text-lg font-medium text-slate-200 mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-sm text-slate-400 mb-3 leading-relaxed">
+                  {step.description}
+                </p>
+                <p className="text-xs text-slate-500">
+                  <span className="text-amber-500">Your effort:</span> {step.effort}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================== */}
+      {/* GUARANTEE CTA */}
+      {/* ================================================================== */}
+      <section className="py-20">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+          <p className="font-mono text-xs tracking-widest text-amber-500 mb-4">
+            THE GUARANTEE
+          </p>
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold text-slate-100 mb-4">
+            {guarantee.headline}
+          </h2>
+          <p className="text-slate-400 mb-8">{guarantee.subhead}</p>
+
+          <div className="bg-slate-900/50 border border-slate-700/30 rounded-lg p-8 mb-8 text-left">
+            <ul className="space-y-4">
+              {guarantee.terms.map((term, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <span className="text-slate-300">{term}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-[#0a0f14] font-semibold px-8 py-4 rounded text-base transition-all hover:shadow-lg hover:shadow-amber-500/25"
+          >
+            {guarantee.cta}
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+
+          <p className="text-sm text-slate-500 mt-6">{guarantee.scarcity}</p>
         </div>
       </section>
 
