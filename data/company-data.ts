@@ -31,6 +31,9 @@ export const copyVariants = {
     integrationsSubhead: "When SYSPRO needed to migrate South Africa's largest media logistics company from SAP—and automate everything—they hired us. Retail EDI, multi-ERP support, TransLution WMS, custom API development. We build the bridges between your systems.",
     caseStudyHeadline: "On The Dot: SAP → SYSPRO in 7 Months",
 
+    // About Page
+    aboutStory: "In 2025, SYSPRO hired us directly to migrate and automate South Africa's largest media logistics company.",
+
     // Flagship Section
     flagshipLabel: "FLAGSHIP PROJECT",
     flagshipHeadline: "SYSPRO Hired Us to Rebuild South Africa's Media Supply Chain",
@@ -48,6 +51,9 @@ export const copyVariants = {
     // Integrations Page
     integrationsSubhead: "We migrated South Africa's largest media logistics company from SAP—and automated everything. Retail EDI, multi-ERP support, TransLution WMS, custom API development. We build the bridges between your systems.",
     caseStudyHeadline: "Media Logistics Leader: SAP → SYSPRO in 7 Months",
+
+    // About Page
+    aboutStory: "In 2025, we migrated and automated South Africa's largest media logistics company.",
 
     // Flagship Section
     flagshipLabel: "FLAGSHIP PROJECT",
@@ -843,3 +849,234 @@ export const integrationTimeline = [
   { phase: "Go-Live & Stabilization", duration: "1 week" },
   { phase: "Ongoing Support", duration: "Continuous" },
 ];
+
+// ============================================================================
+// DASHBOARDS PAGE DATA
+// ============================================================================
+
+export const dashboardProblem = {
+  headline: "Month-End Shouldn't Take 5 Days",
+  copy: "Most SYSPRO users spend their month-end pulling the same reports, copying data into Excel, and manually building the same summaries. Every. Single. Month. Meanwhile, critical decisions wait. Cash flow problems sneak up. Overdue invoices pile up unnoticed. Our clients cut month-end from 5 days to 6 hours. Some do it in half a day.",
+  timeSaved: [
+    { task: "AR Aging Reports", before: "4 hours", after: "Instant" },
+    { task: "Stock Level Checks", before: "2 hours", after: "Instant" },
+    { task: "Sales Summary", before: "3 hours", after: "Instant" },
+    { task: "Open Order Status", before: "2 hours", after: "Instant" },
+  ],
+  averageSaved: "Average: 15-20 hours saved per week",
+};
+
+export const dashboardCategories = [
+  {
+    category: "Finance & AR",
+    dashboards: [
+      "Accounts Receivable Aging",
+      "Cash Flow Forecast",
+      "Credit Control Dashboard",
+      "Overdue Invoice Tracker",
+      "Payment Performance",
+      "Debtors Age Analysis",
+    ],
+  },
+  {
+    category: "Sales & Orders",
+    dashboards: [
+      "Open Orders Status",
+      "Sales Pipeline",
+      "Customer Order History",
+      "Backorder Management",
+      "Sales Rep Performance",
+      "Quote Conversion Rates",
+    ],
+  },
+  {
+    category: "Inventory & Stock",
+    dashboards: [
+      "Stock Levels Live",
+      "Reorder Point Alerts",
+      "Slow-Moving Stock",
+      "Stock Valuation",
+      "Warehouse Location",
+      "Stock Take Variance",
+    ],
+  },
+  {
+    category: "Production & Manufacturing",
+    dashboards: [
+      "Production Schedule",
+      "WIP Tracking",
+      "Machine Utilisation",
+      "Quality Control",
+      "BOM Cost Analysis",
+      "Capacity Planning",
+    ],
+  },
+  {
+    category: "Purchasing & Suppliers",
+    dashboards: [
+      "Purchase Order Status",
+      "Supplier Performance",
+      "GRN Matching",
+      "Outstanding Creditors",
+      "Lead Time Analysis",
+      "Price Variance",
+    ],
+  },
+  {
+    category: "Management & Executive",
+    dashboards: [
+      "Executive Summary",
+      "KPI Scorecard",
+      "Profitability by Product",
+      "Customer Profitability",
+      "Budget vs Actual",
+      "Month-End Dashboard",
+    ],
+  },
+];
+
+// ============================================================================
+// ABOUT PAGE DATA
+// ============================================================================
+
+export const aboutData = {
+  headline: "We've Been Making ERPs Actually Work Since 2009",
+  subhead: "15 years. 60+ clients. Two products that power millions of transactions. And one SAP-to-SYSPRO migration that SYSPRO hired us to do themselves.",
+  story: [
+    "RSASoft started with a simple observation: SYSPRO is powerful software that most companies use at 20% of its capability.",
+    "Not because they don't want more. Because bridging the gap between \"what SYSPRO can do\" and \"what your business needs it to do\" requires deep expertise that most companies don't have in-house.",
+    "We became that expertise.",
+  ],
+  achievements: [
+    "RSI — The SYSPRO automation engine that now processes 1.5M+ transactions monthly",
+    "RSATalk — The EDI and integration platform connecting to every major SA retailer",
+    "100+ custom applications — Portals, dashboards, mobile apps, workflow systems",
+    "60+ active client relationships — From JSE-listed food conglomerates to specialized manufacturers",
+  ],
+  stats: [
+    { value: "15+", label: "Years in business" },
+    { value: "60+", label: "Active clients" },
+    { value: "1.5M+", label: "RSI transactions monthly" },
+    { value: "100+", label: "Custom applications built" },
+    { value: "90%", label: "Clients using RSI" },
+    { value: "7 months", label: "Flagship project delivery" },
+  ],
+  partnerships: [
+    {
+      name: "TransLution",
+      type: "Official Partner",
+      detail: "WMS and production floor integration for SYSPRO, Sage, and more.",
+    },
+    {
+      name: "SYSPRO",
+      type: "Integration Excellence Award 2025",
+      detail: "Recognized for the largest and most complex retail integration in SYSPRO's partner ecosystem.",
+    },
+    {
+      name: "SendGrid",
+      type: "Email Infrastructure",
+      detail: "Transactional email at scale for automated document delivery.",
+    },
+  ],
+};
+
+// Add stats to RSI product for about page
+export const productsWithStats = {
+  rsi: {
+    ...products.rsi,
+    stats: {
+      transactionsMonthly: "1.5M+",
+      clientAdoption: "90%",
+    },
+  },
+  rsatalk: products.rsatalk,
+};
+
+// ============================================================================
+// AUTOMATION PAGE DATA
+// ============================================================================
+
+export const rsiStory = {
+  headline: "RSI: Your SYSPRO Autopilot",
+  problem: "Here's the problem with SYSPRO: most things take multiple steps. Want to process a sales order? That's SORTOI to create it, SORTBO to ship the lines, SORTIC to invoice. Three business object calls. Three chances for error. Three things someone has to do.",
+  solution: "RSI handles the sequence. You trigger one action—from a dashboard, an API call, or a schedule. RSI executes all the SYSPRO calls required, in order, with error handling at each step. If step 2 fails, RSI knows. It logs the error, notifies the right people, and queues for retry. No silent failures. No half-completed transactions.",
+  stats: {
+    headline: "Last Month, RSI Posted 1.4 Million Transactions for One Client",
+    breakdown: [
+      { count: "142,294", type: "Sales orders created" },
+      { count: "111,982", type: "Dispatch notes generated" },
+      { count: "126,407", type: "Credit notes processed" },
+      { count: "94,584", type: "Backorder releases" },
+    ],
+    footnote: "Thousands more: requisitions, SCTs, invoices, inventory adjustments. All automated. All logged. All auditable.",
+  },
+};
+
+export const automationTypes = [
+  {
+    title: "Document Generation",
+    description: "Documents That Create Themselves",
+    features: [
+      "SSRS reports triggered programmatically",
+      "PDFs generated automatically",
+      "Branded email templates",
+      "Sent to the right contact, every time",
+      "Full delivery tracking",
+    ],
+    proof: "10,000+ SPAR invoices emailed monthly. Auto-generated, auto-sent, zero manual steps.",
+  },
+  {
+    title: "Approval Workflows",
+    description: "Approvals Without the Chasing",
+    features: [
+      "Configurable approval chains",
+      "Mobile-friendly approval interface",
+      "Escalation rules for overdue items",
+      "Full audit trail",
+      "ERP integration on approval",
+    ],
+    proof: "PO approval, credit limit increases, bank detail changes, new supplier onboarding.",
+  },
+  {
+    title: "Multi-Step Transactions",
+    description: "One Trigger, Multiple SYSPRO Calls",
+    features: [
+      "Sales order created? Auto-ship and auto-invoice",
+      "Credit note needed? Check stock, adjust inventory, create header, add lines, post",
+      "Dispatch note done? Mirror to delivery platform, generate EDI ASN, notify warehouse",
+      "You define the sequence. RSI executes it every time, the same way",
+    ],
+    proof: "The RSI \"after-post\" capability: configurable actions after each SYSPRO transaction.",
+  },
+  {
+    title: "Scheduled Processing",
+    description: "Jobs That Run While You Sleep",
+    features: [
+      "Nightly data synchronization",
+      "Scheduled report distribution",
+      "Batch transaction processing",
+      "Automated reconciliation",
+      "End-of-day procedures",
+    ],
+    proof: "If it happens on a schedule, it shouldn't require a person.",
+  },
+];
+
+export const beforeAfterAutomation = {
+  before: [
+    "Finance spends 4+ hours daily on manual SYSPRO entries",
+    "Invoices sent inconsistently, often late",
+    "Approvals bottleneck with key people",
+    "Month-end takes 5+ days",
+    "Multi-step transactions done manually (and differently each time)",
+    "No audit trail for compliance",
+  ],
+  after: [
+    "RSI posts millions of transactions without intervention",
+    "Every invoice sent within minutes of creation",
+    "Approvals routed and tracked automatically",
+    "Month-end closes in hours",
+    "Multi-step transactions executed identically every time",
+    "Complete audit trail for every action",
+  ],
+};

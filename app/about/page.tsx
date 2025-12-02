@@ -3,231 +3,265 @@
 import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { 
-  ArrowRight, 
+import {
+  ArrowRight,
+  Check,
+  Server,
+  Network,
   Award,
-  Calendar,
   Users,
-  Target,
-  Shield
 } from "lucide-react";
-import { allClients } from "@/data/company-data";
+import {
+  CopyVersion,
+  copyVariants,
+  aboutData,
+  productsWithStats,
+  guarantee,
+} from "@/data/company-data";
+
+// ============================================================================
+// COPY VERSION TOGGLE
+// ============================================================================
+const COPY_VERSION: CopyVersion = "full";
+
+const copy = copyVariants[COPY_VERSION];
 
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-[#0a0f14] text-slate-200">
-      <Navbar />
+      <Navbar copyVersion={COPY_VERSION} />
 
-      {/* Hero */}
+      {/* ================================================================== */}
+      {/* HERO */}
+      {/* ================================================================== */}
       <section className="pt-32 pb-20 relative grid-pattern noise-overlay">
         <div className="absolute top-1/4 right-0 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl" />
-        
+
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl">
+          <div className="max-w-4xl">
             <p className="font-mono text-xs tracking-widest text-amber-500 mb-4">
               ABOUT RSASOFT
             </p>
-            
+
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold text-slate-100 mb-6 leading-tight">
-              We've Been Fixing SYSPRO Problems Since 2009
+              {aboutData.headline}
             </h1>
-            
-            <p className="text-lg text-slate-400 mb-8 leading-relaxed">
-              RSASoft started after spending years watching businesses struggle with the gap between 
-              what SYSPRO CAN do and what it ACTUALLY does for them out of the box. The software is 
-              powerful. But without customisation, it's like buying a race car and driving it in first gear.
-            </p>
 
-            <p className="text-slate-300 font-medium">
-              We bridge that gap.
+            <p className="text-lg text-slate-400 mb-8 leading-relaxed max-w-3xl">
+              {aboutData.subhead}
             </p>
           </div>
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="py-16 bg-slate-900/30">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { number: "15+", label: "Years Experience" },
-              { number: "60+", label: "Active Clients" },
-              { number: "500+", label: "Dashboards Deployed" },
-              { number: "1M+", label: "EDI Orders Processed" },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-amber-gradient font-display text-4xl sm:text-5xl font-semibold mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-slate-400">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* The Story */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <div>
-              <h2 className="font-display text-3xl sm:text-4xl font-semibold text-slate-100 mb-6">
-                One Thing, Done Extremely Well
-              </h2>
-              
-              <div className="space-y-6 text-slate-400 leading-relaxed">
-                <p>
-                  We're not generalists trying to do everything. We do one thing extremely well: 
-                  <span className="text-slate-200"> make SYSPRO work the way it should</span> for 
-                  manufacturers and distributors.
-                </p>
-                
-                <p>
-                  Over 15 years, we've seen every possible SYSPRO configuration, every industry 
-                  quirk, every edge case. We've built dashboards for food manufacturers, logistics 
-                  companies, hardware distributors, cosmetics brands, and everything in between.
-                </p>
-                
-                <p>
-                  That depth of experience is why SYSPRO themselves hired us for their biggest 
-                  retail integration project—connecting On The Dot to Pick n Pay's EDI system.
-                </p>
-
-                <p>
-                  When things get complicated, you want someone who's seen it before. We have.
-                </p>
-              </div>
-            </div>
-
-            <div className="space-y-6">
-              {/* Award */}
-              <div className="bg-amber-500/10 border border-amber-500/30 rounded-lg p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Award className="w-8 h-8 text-amber-500" />
-                  <div>
-                    <h3 className="font-display text-lg font-medium text-slate-200">
-                      SYSPRO Integration Award 2025
-                    </h3>
-                    <p className="text-sm text-slate-500">
-                      For the On The Dot / Pick n Pay integration
-                    </p>
-                  </div>
-                </div>
-                <p className="text-sm text-slate-400">
-                  SYSPRO hired us directly for their largest retail integration deployment. 
-                  58,000+ POs processed with 100% uptime since August 2025.
-                </p>
-              </div>
-
-              {/* Timeline highlights */}
-              <div className="bg-slate-900/50 border border-slate-700/30 rounded-lg p-6">
-                <h3 className="font-display text-lg font-medium text-slate-200 mb-4">
-                  Key Milestones
-                </h3>
-                <div className="space-y-4">
-                  {[
-                    { year: "2009", event: "RSASoft founded" },
-                    { year: "2012", event: "First major retail EDI integration" },
-                    { year: "2018", event: "500th dashboard deployed" },
-                    { year: "2024", event: "On The Dot / Pick n Pay go-live" },
-                    { year: "2025", event: "SYSPRO Integration Award" },
-                  ].map((milestone) => (
-                    <div key={milestone.year} className="flex gap-4">
-                      <span className="font-mono text-amber-500 text-sm w-12">{milestone.year}</span>
-                      <span className="text-slate-400 text-sm">{milestone.event}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* What We Believe */}
+      {/* ================================================================== */}
+      {/* THE STORY */}
+      {/* ================================================================== */}
       <section className="py-20 bg-slate-900/30">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl sm:text-4xl font-semibold text-slate-100 mb-4">
-              What We Believe
-            </h2>
-          </div>
+          <div className="grid lg:grid-cols-2 gap-12">
+            <div>
+              <p className="font-mono text-xs tracking-widest text-amber-500 mb-4">
+                OUR STORY
+              </p>
+              <h2 className="font-display text-3xl sm:text-4xl font-semibold text-slate-100 mb-6">
+                How We Got Here
+              </h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Target,
-                title: "Results Over Activity",
-                desc: "We don't bill for hours spent. We bill for problems solved. If it doesn't improve your operations, we keep working until it does."
-              },
-              {
-                icon: Shield,
-                title: "Reliability is Non-Negotiable",
-                desc: "Your business runs 24/7. Your integrations should too. We build for 99.9% uptime because anything less costs you money."
-              },
-              {
-                icon: Users,
-                title: "Partnership, Not Projects",
-                desc: "We don't disappear after go-live. Your business evolves, your systems should too. We're here for the long haul."
-              },
-            ].map((belief) => (
-              <div key={belief.title} className="text-center">
-                <belief.icon className="w-10 h-10 text-amber-500 mx-auto mb-4" />
-                <h3 className="font-display text-xl font-medium text-slate-200 mb-3">
-                  {belief.title}
-                </h3>
-                <p className="text-slate-400 leading-relaxed">
-                  {belief.desc}
+              <div className="space-y-4 text-slate-400 leading-relaxed">
+                {aboutData.story.map((paragraph, i) => (
+                  <p key={i}>{paragraph}</p>
+                ))}
+              </div>
+
+              <div className="mt-8 space-y-4">
+                <p className="text-slate-300 font-medium">Over 15 years, we've built:</p>
+                <ul className="space-y-2">
+                  {aboutData.achievements.map((achievement, i) => (
+                    <li key={i} className="flex items-start gap-2 text-slate-400">
+                      <Check className="w-4 h-4 text-emerald-500 mt-1 flex-shrink-0" />
+                      {achievement}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <p className="mt-8 text-slate-400 leading-relaxed">
+                {copy.aboutStory} That project—SAP to SYSPRO, 25,000 stores, 15 warehouses,
+                12 automated stages, 1.4 million transactions per month—is what's possible
+                when ERP integration is done right.
+              </p>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-2 gap-4 content-start">
+              {aboutData.stats.map((stat, i) => (
+                <div
+                  key={i}
+                  className="bg-slate-900/50 border border-slate-700/30 rounded-lg p-6 text-center"
+                >
+                  <div className="text-amber-gradient font-display text-3xl font-bold mb-2">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-slate-500">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================== */}
+      {/* PRODUCTS */}
+      {/* ================================================================== */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <p className="font-mono text-xs tracking-widest text-amber-500 mb-4">
+            OUR PRODUCTS
+          </p>
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold text-slate-100 mb-12">
+            The Technology Behind It
+          </h2>
+
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* RSI */}
+            <div className="bg-slate-900/50 border border-slate-700/30 rounded-lg p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <Server className="w-10 h-10 text-amber-500" />
+                <div>
+                  <h3 className="font-display text-xl font-medium text-slate-100">
+                    {productsWithStats.rsi.name}
+                  </h3>
+                  <p className="text-sm text-slate-400">{productsWithStats.rsi.tagline}</p>
+                </div>
+              </div>
+
+              <p className="text-slate-400 mb-4 leading-relaxed">
+                Licensed to 90% of our clients. Posts to SYSPRO via business objects
+                with full error handling, retry logic, and audit trail.
+              </p>
+
+              <p className="text-sm text-slate-500 mb-4">
+                One trigger → Multiple SYSPRO calls → Verified result
+              </p>
+
+              <div className="bg-emerald-500/10 border border-emerald-500/20 rounded p-4">
+                <p className="text-emerald-400 font-medium">
+                  {productsWithStats.rsi.stats.transactionsMonthly} transactions processed monthly across all clients.
                 </p>
+              </div>
+            </div>
+
+            {/* RSATalk */}
+            <div className="bg-slate-900/50 border border-slate-700/30 rounded-lg p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <Network className="w-10 h-10 text-amber-500" />
+                <div>
+                  <h3 className="font-display text-xl font-medium text-slate-100">
+                    {productsWithStats.rsatalk.name}
+                  </h3>
+                  <p className="text-sm text-slate-400">{productsWithStats.rsatalk.tagline}</p>
+                </div>
+              </div>
+
+              <p className="text-slate-400 mb-4 leading-relaxed">
+                Connects SYSPRO to retailers, APIs, email, and file systems.
+                Validation-first EDI ensures bad data doesn't reach your ERP.
+              </p>
+
+              <p className="text-sm text-slate-500 mb-4">
+                Components: EDI Engine, API Automator, Mail Service, SFTP Handler
+              </p>
+
+              <div className="bg-emerald-500/10 border border-emerald-500/20 rounded p-4">
+                <p className="text-emerald-400 font-medium">
+                  Every major SA retailer connected.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================== */}
+      {/* PARTNERSHIPS */}
+      {/* ================================================================== */}
+      <section className="py-20 bg-slate-900/30">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <p className="font-mono text-xs tracking-widest text-amber-500 mb-4">
+            PARTNERSHIPS
+          </p>
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold text-slate-100 mb-12">
+            Our Partners
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {aboutData.partnerships.map((partner, i) => (
+              <div
+                key={i}
+                className="bg-slate-900/50 border border-slate-700/30 rounded-lg p-6"
+              >
+                <div className="flex items-center gap-2 mb-4">
+                  <Award className="w-6 h-6 text-amber-500" />
+                  <h3 className="font-display text-lg font-medium text-slate-200">
+                    {partner.name}
+                  </h3>
+                </div>
+                <div className="text-xs text-amber-500 mb-2">{partner.type}</div>
+                <p className="text-sm text-slate-400">{partner.detail}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Clients */}
+      {/* ================================================================== */}
+      {/* TEAM */}
+      {/* ================================================================== */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl sm:text-4xl font-semibold text-slate-100 mb-4">
-              Companies That Trust Us
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <Users className="w-6 h-6 text-amber-500" />
+              <p className="font-mono text-xs tracking-widest text-amber-500">
+                THE TEAM
+              </p>
+            </div>
+            <h2 className="font-display text-3xl sm:text-4xl font-semibold text-slate-100 mb-6">
+              Small Team. Big Impact.
             </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">
-              From JSE-listed food conglomerates to specialised manufacturers, we help businesses 
-              across South Africa get control of their SYSPRO operations.
+            <p className="text-slate-400 leading-relaxed mb-8">
+              We're not a 500-person consultancy. We're a focused team of specialists
+              who've spent 15+ years doing one thing: making ERPs actually work.
+              When you work with us, you work with the people who built RSI and RSATalk.
             </p>
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-slate-500">
-            {allClients.map((client) => (
-              <span 
-                key={client.name} 
-                className="hover:text-slate-300 transition-colors cursor-default"
-              >
-                {client.name}
-              </span>
-            ))}
+            <p className="text-slate-400 leading-relaxed">
+              That's why we limit ourselves to 5 new clients per month. Quality over
+              quantity. Every time.
+            </p>
           </div>
         </div>
       </section>
 
+      {/* ================================================================== */}
       {/* CTA */}
+      {/* ================================================================== */}
       <section className="py-20 bg-slate-900/30">
         <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="font-display text-3xl sm:text-4xl font-semibold text-slate-100 mb-6">
-            Let's Talk About Your SYSPRO
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold text-slate-100 mb-4">
+            {guarantee.headline}
           </h2>
-          <p className="text-slate-400 mb-8">
-            We'll spend 30 minutes understanding your setup and identify where you're losing the 
-            most time. No sales pitch, just practical advice you can use whether you hire us or not.
-          </p>
+          <p className="text-slate-400 mb-8">{guarantee.subhead}</p>
+
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-[#0a0f14] font-medium px-8 py-4 rounded text-base transition-all hover:shadow-lg hover:shadow-amber-500/25"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-[#0a0f14] font-semibold px-8 py-4 rounded text-base transition-all hover:shadow-lg hover:shadow-amber-500/25"
           >
-            Book Your Free Audit
+            {guarantee.cta}
             <ArrowRight className="w-4 h-4" />
           </Link>
+
+          <p className="text-sm text-slate-500 mt-6">{guarantee.scarcity}</p>
         </div>
       </section>
 
