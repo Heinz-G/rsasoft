@@ -27,6 +27,10 @@ export const copyVariants = {
     heroAward: "SYSPRO Integration Excellence Award 2025 — SYSPRO hired us directly",
     heroSubhead: "We build the automation that makes ERPs actually work. SYSPRO hired us to migrate South Africa's largest media logistics company from SAP. Seven months later: 1.4 million automated transactions per month. Zero manual data entry.",
 
+    // Integrations Page
+    integrationsSubhead: "When SYSPRO needed to migrate South Africa's largest media logistics company from SAP—and automate everything—they hired us. Retail EDI, multi-ERP support, TransLution WMS, custom API development. We build the bridges between your systems.",
+    caseStudyHeadline: "On The Dot: SAP → SYSPRO in 7 Months",
+
     // Flagship Section
     flagshipLabel: "FLAGSHIP PROJECT",
     flagshipHeadline: "SYSPRO Hired Us to Rebuild South Africa's Media Supply Chain",
@@ -40,6 +44,10 @@ export const copyVariants = {
     // Hero Section
     heroAward: "SYSPRO Integration Excellence Award 2025",
     heroSubhead: "We build the automation that makes ERPs actually work. Our flagship project: migrating a major media distributor from SAP, then automating everything. Seven months later: 1.4 million transactions per month. Zero manual data entry.",
+
+    // Integrations Page
+    integrationsSubhead: "We migrated South Africa's largest media logistics company from SAP—and automated everything. Retail EDI, multi-ERP support, TransLution WMS, custom API development. We build the bridges between your systems.",
+    caseStudyHeadline: "Media Logistics Leader: SAP → SYSPRO in 7 Months",
 
     // Flagship Section
     flagshipLabel: "FLAGSHIP PROJECT",
@@ -731,3 +739,107 @@ export const serviceCategories = {
     ],
   },
 };
+
+// ============================================================================
+// INTEGRATION CAPABILITIES (For Integrations Page)
+// ============================================================================
+
+export const integrationCapabilities = [
+  {
+    title: "Retail EDI",
+    description: "Direct connections to every major SA retailer. Orders in, invoices out, validation in between.",
+    features: [
+      "Purchase order import",
+      "Invoice/credit note export",
+      "ASN generation",
+      "Inventory reporting",
+      "Claims processing",
+    ],
+  },
+  {
+    title: "Multi-ERP Support",
+    description: "Not just SYSPRO. TransLution partnership extends to Sage and SAP.",
+    features: [
+      "SYSPRO (primary—15+ years)",
+      "Sage 200 (via TransLution)",
+      "SAP (migration + integration)",
+    ],
+  },
+  {
+    title: "Warehouse & Production",
+    description: "TransLution official partner. Shop floor to ERP, real-time.",
+    features: [
+      "WMS integration",
+      "Barcode scanning",
+      "Production tracking",
+      "Lot/serial control",
+    ],
+  },
+  {
+    title: "API Development",
+    description: "Custom APIs that simplify SYSPRO complexity.",
+    features: [
+      "REST wrappers over SYSPRO e.Net",
+      "Single-call transactions (vs 2-4 BO calls)",
+      "Webhook triggers",
+      "Third-party API integration",
+    ],
+  },
+  {
+    title: "File-Based Integration",
+    description: "Legacy systems, scheduled imports, batch processing.",
+    features: [
+      "SFTP/FTP automation",
+      "Excel/CSV imports",
+      "XML transformation",
+      "Scheduled polling",
+    ],
+  },
+  {
+    title: "Email Automation",
+    description: "Transactional email at scale.",
+    features: [
+      "SSRS report triggering",
+      "PDF generation",
+      "Branded templates",
+      "SendGrid infrastructure",
+    ],
+  },
+];
+
+// ============================================================================
+// EDI FLOW (For Integrations Page)
+// ============================================================================
+
+export const ediFlow = {
+  inbound: [
+    "RSATalk fetches POs from retailer APIs/SFTP",
+    "Validation engine checks GLN, pricing, GTINs against your SYSPRO data",
+    "Valid orders → RSI creates Sales Orders automatically",
+    "Invalid orders → Dashboard for review and correction",
+  ],
+  outbound: [
+    "RSI posts dispatch/invoice to SYSPRO",
+    "RSATalk generates EDI document (ASN, invoice)",
+    "RSATalk sends to retailer via API/SFTP",
+    "Confirmation logged, dashboard updated",
+  ],
+  dashboardFeatures: [
+    "Validation failures surfaced immediately",
+    "Retry queue for corrected orders",
+    "Full visibility into what's pending, posted, or failed",
+    "Rules-based blocking (configurable per client)",
+  ],
+};
+
+// ============================================================================
+// INTEGRATION TIMELINE (For Integrations Page)
+// ============================================================================
+
+export const integrationTimeline = [
+  { phase: "Discovery & Mapping", duration: "1-2 weeks" },
+  { phase: "Development", duration: "2-4 weeks" },
+  { phase: "Testing with Trading Partners", duration: "1-2 weeks" },
+  { phase: "Go-Live & Stabilization", duration: "1 week" },
+  { phase: "Ongoing Support", duration: "Continuous" },
+];
