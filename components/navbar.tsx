@@ -3,8 +3,13 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, Award } from "lucide-react";
+import { type CopyVersion } from "@/data/company-data";
 
-export function Navbar() {
+interface NavbarProps {
+  copyVersion?: CopyVersion;
+}
+
+export function Navbar({ copyVersion = "full" }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -15,6 +20,10 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const awardText = copyVersion === "full" 
+    ? "SYSPRO Integration Excellence Award 2024" 
+    : "SYSPRO Integration Excellence Award 2024";
 
   return (
     <nav
@@ -34,7 +43,7 @@ export function Navbar() {
             <div className="flex flex-col">
               <span className="font-display text-xl font-semibold text-slate-100">RSASoft</span>
               <span className="text-[10px] text-amber-500 font-mono tracking-wider hidden sm:block">
-                SYSPRO INTEGRATION EXCELLENCE
+                ERP INTEGRATION EXCELLENCE
               </span>
             </div>
           </Link>
@@ -42,7 +51,7 @@ export function Navbar() {
           {/* Award Badge - Desktop */}
           <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 bg-amber-500/10 border border-amber-500/30 rounded-full">
             <Award className="w-4 h-4 text-amber-500" />
-            <span className="text-xs text-amber-400 font-medium">SYSPRO Integration Award 2025</span>
+            <span className="text-xs text-amber-400 font-medium">{awardText}</span>
           </div>
 
           {/* Desktop Nav */}
@@ -66,6 +75,12 @@ export function Navbar() {
               Automation
             </Link>
             <Link 
+              href="/custom" 
+              className="text-slate-400 hover:text-amber-400 transition-colors text-sm"
+            >
+              Custom Apps
+            </Link>
+            <Link 
               href="/about" 
               className="text-slate-400 hover:text-amber-400 transition-colors text-sm"
             >
@@ -73,9 +88,9 @@ export function Navbar() {
             </Link>
             <Link
               href="/contact"
-              className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-[#0a0f14] font-medium px-5 py-2.5 rounded text-sm transition-all hover:shadow-lg hover:shadow-amber-500/25"
+              className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-[#0a0f14] font-semibold px-5 py-2.5 rounded text-sm transition-all hover:shadow-lg hover:shadow-amber-500/25"
             >
-              Book Free Audit
+              Free ERP Audit
             </Link>
           </div>
 
@@ -91,10 +106,9 @@ export function Navbar() {
         {/* Mobile menu */}
         {mobileMenuOpen && (
           <div className="md:hidden pb-6 space-y-4 border-t border-slate-800/50 pt-4">
-            {/* Award Badge - Mobile */}
             <div className="flex items-center gap-2 px-3 py-2 bg-amber-500/10 border border-amber-500/30 rounded-lg mb-4">
               <Award className="w-4 h-4 text-amber-500" />
-              <span className="text-xs text-amber-400 font-medium">SYSPRO Integration Award 2025</span>
+              <span className="text-xs text-amber-400 font-medium">{awardText}</span>
             </div>
             
             <Link 
@@ -119,6 +133,13 @@ export function Navbar() {
               Automation
             </Link>
             <Link 
+              href="/custom" 
+              className="block text-slate-300 hover:text-amber-400 transition-colors py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Custom Apps
+            </Link>
+            <Link 
               href="/about" 
               className="block text-slate-300 hover:text-amber-400 transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
@@ -127,10 +148,10 @@ export function Navbar() {
             </Link>
             <Link
               href="/contact"
-              className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-[#0a0f14] font-medium px-5 py-3 rounded transition-all mt-4"
+              className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-[#0a0f14] font-semibold px-5 py-3 rounded transition-all mt-4"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Book Free Audit
+              Free ERP Audit
             </Link>
           </div>
         )}
