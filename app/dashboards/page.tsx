@@ -4,14 +4,14 @@ import { useState } from "react";
 import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { 
-  ArrowRight, 
-  Check, 
-  BarChart3, 
-  Clock, 
-  DollarSign, 
-  Package, 
-  Users, 
+import {
+  ArrowRight,
+  Check,
+  BarChart3,
+  Clock,
+  DollarSign,
+  Package,
+  Users,
   TrendingUp,
   FileText,
   AlertTriangle,
@@ -98,32 +98,32 @@ export default function DashboardsPage() {
   const [activeCategory, setActiveCategory] = useState(0);
 
   return (
-    <main className="min-h-screen bg-[#0a0f14] text-slate-200">
+    <main className="min-h-screen bg-slate-950 text-slate-200">
       <Navbar />
 
       {/* Hero */}
       <section className="pt-32 pb-20 relative grid-pattern noise-overlay">
-        <div className="absolute top-1/4 right-0 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl" />
-        
+        <div className="absolute top-1/4 right-0 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl" />
+
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <p className="font-mono text-xs tracking-widest text-amber-500 mb-4">
+            <p className="font-mono text-xs tracking-widest text-teal-500 mb-4">
               60+ READY-TO-DEPLOY DASHBOARDS
             </p>
-            
+
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold text-slate-100 mb-6 leading-tight">
               Stop Digging Through SYSPRO. Start Making Decisions.
             </h1>
-            
+
             <p className="text-lg text-slate-400 mb-8 leading-relaxed">
-              Your data already lives in SYSPRO. We surface it in dashboards that update every minute—so 
+              Your data already lives in SYSPRO. We surface it in dashboards that update every minute—so
               you're never waiting for reports that are already outdated by the time you get them.
             </p>
 
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-[#0a0f14] font-medium px-8 py-4 rounded text-base transition-all hover:shadow-lg hover:shadow-amber-500/25"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-400 hover:to-teal-500 text-slate-950 font-medium px-8 py-4 rounded text-base transition-all hover:shadow-lg hover:shadow-teal-500/25"
               >
                 Book Dashboard Demo
                 <ArrowRight className="w-4 h-4" />
@@ -142,18 +142,18 @@ export default function DashboardsPage() {
                 Month-End Shouldn't Take 5 Days
               </h2>
               <p className="text-slate-400 mb-6 leading-relaxed">
-                Most SYSPRO users spend their month-end pulling the same reports, copying data into 
+                Most SYSPRO users spend their month-end pulling the same reports, copying data into
                 Excel, and manually building the same summaries. Every. Single. Month.
               </p>
               <p className="text-slate-400 mb-6 leading-relaxed">
-                Meanwhile, critical decisions wait. Cash flow problems sneak up. Overdue invoices 
+                Meanwhile, critical decisions wait. Cash flow problems sneak up. Overdue invoices
                 pile up unnoticed.
               </p>
               <p className="text-slate-300 font-medium">
                 Our clients cut month-end from 5 days to 6 hours. Some do it in half a day.
               </p>
             </div>
-            
+
             <div className="bg-slate-900/80 border border-slate-700/30 rounded-lg p-8">
               <h3 className="font-display text-xl font-medium text-slate-200 mb-6">
                 Time Saved Per Week
@@ -175,7 +175,7 @@ export default function DashboardsPage() {
                   </div>
                 ))}
               </div>
-              <p className="mt-6 text-amber-400 font-medium">
+              <p className="mt-6 text-teal-400 font-medium">
                 Average: 15-20 hours saved per week
               </p>
             </div>
@@ -187,7 +187,7 @@ export default function DashboardsPage() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
-            <p className="font-mono text-xs tracking-widest text-amber-500 mb-4">DASHBOARD LIBRARY</p>
+            <p className="font-mono text-xs tracking-widest text-teal-500 mb-4">DASHBOARD LIBRARY</p>
             <h2 className="font-display text-3xl sm:text-4xl font-semibold text-slate-100 mb-4">
               60+ Dashboards Across Every Function
             </h2>
@@ -204,7 +204,7 @@ export default function DashboardsPage() {
                 onClick={() => setActiveCategory(i)}
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm transition-all ${
                   activeCategory === i
-                    ? "bg-amber-500 text-[#0a0f14] font-medium"
+                    ? "bg-teal-500 text-slate-950 font-medium"
                     : "bg-slate-800/50 text-slate-400 hover:text-slate-200 hover:bg-slate-800"
                 }`}
               >
@@ -219,18 +219,18 @@ export default function DashboardsPage() {
             <div className="flex items-center gap-3 mb-6">
               {(() => {
                 const Icon = dashboardCategories[activeCategory].icon;
-                return <Icon className="w-6 h-6 text-amber-500" />;
+                return <Icon className="w-6 h-6 text-teal-500" />;
               })()}
               <h3 className="font-display text-xl font-medium text-slate-200">
                 {dashboardCategories[activeCategory].title} Dashboards
               </h3>
             </div>
-            
+
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {dashboardCategories[activeCategory].dashboards.map((dashboard) => (
                 <div
                   key={dashboard.name}
-                  className="bg-slate-800/50 border border-slate-700/30 rounded-lg p-4 hover:border-amber-500/30 transition-all"
+                  className="bg-slate-800/50 border border-slate-700/30 rounded-lg p-4 hover:border-teal-500/30 transition-all"
                 >
                   <h4 className="font-medium text-slate-200 mb-2">{dashboard.name}</h4>
                   <p className="text-sm text-slate-500">{dashboard.benefit}</p>
@@ -241,7 +241,7 @@ export default function DashboardsPage() {
 
           <p className="text-center mt-8 text-slate-500">
             Don't see what you need? We build custom dashboards too.{" "}
-            <Link href="/contact" className="text-amber-500 hover:text-amber-400">
+            <Link href="/contact" className="text-teal-500 hover:text-teal-400">
               Let's talk →
             </Link>
           </p>
@@ -265,8 +265,8 @@ export default function DashboardsPage() {
               { num: "04", title: "Train", desc: "Your team learns to use and customise their new tools" },
             ].map((step) => (
               <div key={step.num} className="text-center">
-                <div className="w-16 h-16 rounded-full border-2 border-amber-500/50 flex items-center justify-center mx-auto mb-4 bg-slate-900">
-                  <span className="font-mono text-amber-500 font-medium">{step.num}</span>
+                <div className="w-16 h-16 rounded-full border-2 border-teal-500/50 flex items-center justify-center mx-auto mb-4 bg-slate-900">
+                  <span className="font-mono text-teal-500 font-medium">{step.num}</span>
                 </div>
                 <h3 className="font-display text-lg font-medium text-slate-200 mb-2">{step.title}</h3>
                 <p className="text-sm text-slate-400">{step.desc}</p>
@@ -283,12 +283,12 @@ export default function DashboardsPage() {
             See Your Data Come Alive
           </h2>
           <p className="text-slate-400 mb-8">
-            Book a 30-minute demo. We'll show you exactly what's possible with your SYSPRO data—using 
+            Book a 30-minute demo. We'll show you exactly what's possible with your SYSPRO data—using
             real examples from your industry.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-[#0a0f14] font-medium px-8 py-4 rounded text-base transition-all hover:shadow-lg hover:shadow-amber-500/25"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-400 hover:to-teal-500 text-slate-950 font-medium px-8 py-4 rounded text-base transition-all hover:shadow-lg hover:shadow-teal-500/25"
           >
             Book Dashboard Demo
             <ArrowRight className="w-4 h-4" />

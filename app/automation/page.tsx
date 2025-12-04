@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { 
-  ArrowRight, 
-  Check, 
+import {
+  ArrowRight,
+  Check,
   Mail,
   FileText,
   Clock,
@@ -100,32 +100,32 @@ const automationTypes = [
 
 export default function AutomationPage() {
   return (
-    <main className="min-h-screen bg-[#0a0f14] text-slate-200">
+    <main className="min-h-screen bg-slate-950 text-slate-200">
       <Navbar />
 
       {/* Hero */}
       <section className="pt-32 pb-20 relative grid-pattern noise-overlay">
-        <div className="absolute top-1/4 right-0 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl" />
-        
+        <div className="absolute top-1/4 right-0 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl" />
+
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <p className="font-mono text-xs tracking-widest text-amber-500 mb-4">
+            <p className="font-mono text-xs tracking-widest text-teal-500 mb-4">
               WORKFLOW AUTOMATION
             </p>
-            
+
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold text-slate-100 mb-6 leading-tight">
               Stop Being the Bottleneck in Your Own Business
             </h1>
-            
+
             <p className="text-lg text-slate-400 mb-8 leading-relaxed">
-              Approval workflows, automated emails, scheduled reports, bank reconciliation—all the 
+              Approval workflows, automated emails, scheduled reports, bank reconciliation—all the
               repetitive tasks that eat your day, running automatically while you focus on what matters.
             </p>
 
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-[#0a0f14] font-medium px-8 py-4 rounded text-base transition-all hover:shadow-lg hover:shadow-amber-500/25"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-400 hover:to-teal-500 text-slate-950 font-medium px-8 py-4 rounded text-base transition-all hover:shadow-lg hover:shadow-teal-500/25"
               >
                 Automate Your Processes
                 <ArrowRight className="w-4 h-4" />
@@ -141,16 +141,16 @@ export default function AutomationPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Mail className="w-5 h-5 text-amber-500" />
-                <p className="font-mono text-xs tracking-widest text-amber-500">AUTOMATION IN ACTION</p>
+                <Mail className="w-5 h-5 text-teal-500" />
+                <p className="font-mono text-xs tracking-widest text-teal-500">AUTOMATION IN ACTION</p>
               </div>
-              
+
               <h2 className="font-display text-3xl sm:text-4xl font-semibold text-slate-100 mb-6">
                 10,000 Invoices Per Month. Zero Manual Steps.
               </h2>
-              
+
               <p className="text-slate-400 mb-6 leading-relaxed">
-                For SPAR, we built an end-to-end invoice automation system that demonstrates what's 
+                For SPAR, we built an end-to-end invoice automation system that demonstrates what's
                 possible when you stop doing things manually.
               </p>
 
@@ -171,8 +171,8 @@ export default function AutomationPage() {
 
               <div className="bg-slate-800/50 border border-slate-700/30 rounded-lg p-4">
                 <p className="text-sm text-slate-400">
-                  <span className="text-amber-400 font-medium">The opportunity:</span> Most companies 
-                  send plain-text emails with attachments. Branded, dynamic emails build trust and 
+                  <span className="text-teal-400 font-medium">The opportunity:</span> Most companies
+                  send plain-text emails with attachments. Branded, dynamic emails build trust and
                   professionalism with every invoice sent.
                 </p>
               </div>
@@ -182,7 +182,7 @@ export default function AutomationPage() {
               <h3 className="font-display text-xl font-medium text-slate-200 mb-6">
                 The Automation Flow
               </h3>
-              
+
               <div className="space-y-4">
                 {[
                   { step: "1", label: "Invoice created in SYSPRO", icon: FileText },
@@ -192,8 +192,8 @@ export default function AutomationPage() {
                   { step: "5", label: "Delivery logged for audit trail", icon: CheckCircle },
                 ].map((item, i) => (
                   <div key={item.step} className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0">
-                      <span className="font-mono text-amber-500 text-sm">{item.step}</span>
+                    <div className="w-10 h-10 rounded-full bg-teal-500/20 flex items-center justify-center flex-shrink-0">
+                      <span className="font-mono text-teal-500 text-sm">{item.step}</span>
                     </div>
                     <div className="flex-1 flex items-center gap-3 py-3 border-b border-slate-700/30">
                       <item.icon className="w-4 h-4 text-slate-500" />
@@ -204,7 +204,7 @@ export default function AutomationPage() {
               </div>
 
               <div className="mt-6 text-center">
-                <div className="text-amber-gradient font-display text-3xl font-bold mb-1">10K+</div>
+                <div className="text-teal-gradient font-display text-3xl font-bold mb-1">10K+</div>
                 <div className="text-sm text-slate-400">Invoices sent monthly</div>
               </div>
             </div>
@@ -216,7 +216,7 @@ export default function AutomationPage() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
-            <p className="font-mono text-xs tracking-widest text-amber-500 mb-4">WHAT WE AUTOMATE</p>
+            <p className="font-mono text-xs tracking-widest text-teal-500 mb-4">WHAT WE AUTOMATE</p>
             <h2 className="font-display text-3xl sm:text-4xl font-semibold text-slate-100 mb-4">
               Every Repetitive Task is a Candidate
             </h2>
@@ -229,9 +229,9 @@ export default function AutomationPage() {
             {automationTypes.map((type) => (
               <div
                 key={type.title}
-                className="bg-slate-900/50 border border-slate-700/30 rounded-lg p-6 hover:border-amber-500/30 transition-all"
+                className="bg-slate-900/50 border border-slate-700/30 rounded-lg p-6 hover:border-teal-500/30 transition-all"
               >
-                <type.icon className="w-8 h-8 text-amber-500 mb-4" />
+                <type.icon className="w-8 h-8 text-teal-500 mb-4" />
                 <h3 className="font-display text-lg font-medium text-slate-200 mb-2">
                   {type.title}
                 </h3>
@@ -241,7 +241,7 @@ export default function AutomationPage() {
                 <ul className="space-y-2 mb-4">
                   {type.examples.slice(0, 3).map((example) => (
                     <li key={example} className="flex items-center gap-2 text-xs text-slate-500">
-                      <div className="w-1 h-1 bg-amber-500 rounded-full" />
+                      <div className="w-1 h-1 bg-teal-500 rounded-full" />
                       {example}
                     </li>
                   ))}
@@ -319,12 +319,12 @@ export default function AutomationPage() {
             What's Eating Your Team's Time?
           </h2>
           <p className="text-slate-400 mb-8">
-            Book a free audit. We'll identify the 3-5 processes where automation will give you 
+            Book a free audit. We'll identify the 3-5 processes where automation will give you
             the biggest return—and show you exactly how it works.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-[#0a0f14] font-medium px-8 py-4 rounded text-base transition-all hover:shadow-lg hover:shadow-amber-500/25"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-400 hover:to-teal-500 text-slate-950 font-medium px-8 py-4 rounded text-base transition-all hover:shadow-lg hover:shadow-teal-500/25"
           >
             Book Your Free Audit
             <ArrowRight className="w-4 h-4" />

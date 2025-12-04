@@ -1,6 +1,6 @@
-// RSASoft Company Data - V3
+// RSASoft Company Data - V4 Hormozi Edition
+// Optimized following $100M Offers + $100M Leads principles
 // Two versions: "full" (mentions SYSPRO hired us, names On The Dot) and "safe" (anonymous references)
-// All references updated to 2025
 
 export type CopyVersion = "full" | "safe";
 
@@ -23,101 +23,151 @@ export interface Client {
 
 export const copyVariants = {
   full: {
-    // Hero Section
-    heroAward: "SYSPRO Integration Excellence Award 2025 — SYSPRO hired us directly",
-    heroSubhead: "We build the automation that makes ERPs actually work. SYSPRO hired us to migrate South Africa's largest media logistics company from SAP. Seven months later: 1.4 million automated transactions per month. Zero manual data entry.",
+    // Hero Section - Lead with OUTCOME, not problem
+    heroAward: "SYSPRO hired us directly for their largest integration project",
+    heroSubhead: "We'll automate your SYSPRO so your team stops typing and starts shipping. SYSPRO hired us to migrate On The Dot from SAP—now they process 1.4 million transactions monthly without touching a keyboard. Your turn.",
 
     // Integrations Page
     integrationsSubhead: "When SYSPRO needed to migrate South Africa's largest media logistics company from SAP—and automate everything—they hired us. Retail EDI, multi-ERP support, TransLution WMS, custom API development. We build the bridges between your systems.",
     caseStudyHeadline: "On The Dot: SAP → SYSPRO in 7 Months",
 
     // Flagship Section
-    flagshipLabel: "FLAGSHIP PROJECT",
-    flagshipHeadline: "SYSPRO Hired Us to Rebuild South Africa's Media Supply Chain",
+    flagshipLabel: "CASE STUDY: 7 MONTHS FROM SAP TO FULLY AUTOMATED",
+    flagshipHeadline: "SYSPRO Hired Us. Here's What We Built.",
     flagshipStory: [
       "On The Dot distributes 95% of South Africa's magazines and 68% of newspapers to 25,000 retail stores through 15 warehouses nationwide.",
       "When they needed to migrate from SAP to SYSPRO—and automate everything—SYSPRO hired us directly.",
-      "We went from kickoff in January to live in August 2025. Seven months to build a system that now processes 1.4 million automated transactions per month.",
+      "We went from kickoff in January to live in August. Seven months to build a system that now processes 1.4 million automated transactions per month. Zero manual data entry.",
     ],
   },
   safe: {
     // Hero Section
     heroAward: "SYSPRO Integration Excellence Award 2025",
-    heroSubhead: "We build the automation that makes ERPs actually work. Our flagship project: migrating a major media distributor from SAP, then automating everything. Seven months later: 1.4 million transactions per month. Zero manual data entry.",
+    heroSubhead: "We'll automate your SYSPRO so your team stops typing and starts shipping. Our flagship project processes 1.4 million transactions monthly without touching a keyboard. Your turn.",
 
     // Integrations Page
     integrationsSubhead: "We migrated South Africa's largest media logistics company from SAP—and automated everything. Retail EDI, multi-ERP support, TransLution WMS, custom API development. We build the bridges between your systems.",
     caseStudyHeadline: "Media Logistics Leader: SAP → SYSPRO in 7 Months",
 
     // Flagship Section
-    flagshipLabel: "FLAGSHIP PROJECT",
+    flagshipLabel: "CASE STUDY: 7 MONTHS FROM SAP TO FULLY AUTOMATED",
     flagshipHeadline: "We Rebuilt South Africa's Largest Media Supply Chain",
     flagshipStory: [
       "A major media distributor handles 95% of South Africa's magazines and 68% of newspapers—25,000 retail stores, 15 warehouses nationwide.",
       "They needed to migrate from SAP to SYSPRO and automate their entire operation. They chose us.",
-      "Seven months from kickoff to live. The system now processes 1.4 million automated transactions per month.",
+      "Seven months from kickoff to live. The system now processes 1.4 million automated transactions per month. Zero manual data entry.",
     ],
   },
 };
 
 // ============================================================================
-// HERO SECTION DATA
+// HERO SECTION DATA - Hormozi Style: Lead with DREAM OUTCOME
 // ============================================================================
 
 export const heroData = {
   headline: {
-    line1: "Your ERP Has The Data.",
-    line2: "You Just Can't Get To It",
-    line3: "Fast Enough To Matter.",
+    // Hormozi: Lead with the transformation they want
+    line1: "Fire Your Data Entry Team.",
+    line2: "Keep Your ERP.",
+    line3: "10x Your Throughput.",
   },
-  primaryCta: "Get Your Free ERP Audit",
-  secondaryCta: "See What We Built",
+  primaryCta: "Get Your Free Automation Roadmap",
+  secondaryCta: "See The 1.4M/Month Case Study",
   trustSignals: [
-    "SYSPRO • Sage • SAP",
-    "TransLution Partner",
-    "RSI Engine (1.5M+ transactions/month)",
-    "60+ Active Clients",
+    "15+ years SYSPRO expertise",
+    "60+ active clients",
+    "1.5M+ transactions automated monthly",
+    "SYSPRO Integration Award 2025",
   ],
 };
 
 // ============================================================================
-// PAIN POINTS - THE REAL COST
+// THE GRAND SLAM OFFER - Hormozi Core Concept
+// ============================================================================
+
+export const grandSlamOffer = {
+  headline: "The SYSPRO Automation Guarantee",
+  subhead: "We'll Find R500K+ in Annual Savings or You Pay Nothing",
+  components: [
+    {
+      name: "Free Automation Audit",
+      value: "R25,000",
+      description: "We analyze your SYSPRO, find the time-wasters, and map exactly what to automate first. Yours free—whether you hire us or not.",
+    },
+    {
+      name: "Custom Automation Roadmap",
+      value: "R15,000", 
+      description: "A prioritized plan showing ROI per automation, realistic timelines, and the exact sequence to implement.",
+    },
+    {
+      name: "90-Day Results Guarantee",
+      value: "Priceless",
+      description: "If you don't see measurable improvement within 90 days of go-live, we keep working at no additional cost until you do.",
+    },
+    {
+      name: "Priority Implementation",
+      value: "R10,000",
+      description: "Skip the queue. We only take 5 new clients per month—book now and lock in your start date.",
+    },
+  ],
+  totalValue: "R50,000+",
+  yourInvestment: "R0 to start",
+  bonuses: [
+    {
+      name: "EDI Readiness Assessment",
+      description: "See exactly which retailers you can automate and what's blocking you",
+      condition: "Book this week",
+    },
+    {
+      name: "Dashboard Quick-Win",
+      description: "We'll build one live dashboard during the audit—keep it whether you proceed or not",
+      condition: "First 3 clients this month",
+    },
+  ],
+};
+
+// ============================================================================
+// PAIN POINTS - Hormozi Style: Agitate, Then Promise Relief
 // ============================================================================
 
 export const painPoints = [
   {
-    title: "Someone's Typing That Into SYSPRO Right Now",
+    title: "Your Team Typed 10,000 Transactions Last Month",
     problem: "Orders come in from retailers, emails, portals. Someone keys them into SYSPRO. Then keys the dispatch. Then keys the invoice. Every keystroke is a chance for error—and an hour you're paying for.",
-    cost: "One client had staff manually processing what we now automate. Last month, our system posted 1.4 million transactions for them. How many is your team typing?",
+    cost: "At R150/hour, that's R750,000/year in labor for work a machine should do.",
+    solution: "One client eliminated all manual entry. We posted 1.4 million transactions for them last month. Their team now focuses on exceptions, not data entry.",
   },
   {
-    title: "2-4 Business Object Calls Just to Complete One Transaction",
-    problem: "SYSPRO doesn't do things in one step. Sales order? That's SORTOI. Then SORTBO to ship. Then SORTIC to invoice. Your team navigates this maze daily—or writes brittle scripts that break.",
-    cost: "Our clients make one API call. We handle the 2-4 SYSPRO calls behind the scenes. Same result, fraction of the time, zero errors.",
+    title: "SYSPRO Makes Simple Things Hard",
+    problem: "One transaction = 2-4 business object calls. Sales order? That's SORTOI. Then SORTBO to ship. Then SORTIC to invoice. Your team navigates this maze daily—or writes brittle scripts that break.",
+    cost: "Developer time: R1,500/hour. Fixing broken scripts: priceless frustration.",
+    solution: "Our RSI engine handles the complexity. Your systems make one API call. We execute the 2-4 SYSPRO calls perfectly, every time.",
   },
   {
-    title: "You Find Out It's Wrong After It's In SYSPRO",
-    problem: "Wrong price? Invalid GLN? Discontinued GTIN? You discover these when the retailer rejects the invoice—or worse, when they deduct from your payment.",
-    cost: "Our EDI system blocks bad transactions BEFORE they post. The error goes to a dashboard, not to your customer. Prevention, not cleanup.",
+    title: "You Discover Errors AFTER They Hit SYSPRO",
+    problem: "Wrong price? Invalid GLN? Discontinued GTIN? You find out when the retailer rejects the invoice—or worse, when they deduct from your payment.",
+    cost: "Deductions, chargebacks, and the staff hours spent on claims disputes.",
+    solution: "Our EDI validates BEFORE posting. Bad transactions go to a dashboard, not your customer. Prevention, not cleanup.",
   },
   {
-    title: "The Spreadsheet Bridge Between Systems",
+    title: "Your 'Integration' Is a Person With Excel",
     problem: "ERP here. Delivery platform there. Retailer portal somewhere else. Someone exports, reformats, uploads. Every day. Forever.",
-    cost: "We built an integration that mirrors every SYSPRO document to a client's delivery platform automatically. 25,000 stores. 15 warehouses. Zero spreadsheets.",
+    cost: "One full-time employee doing work that should take zero people.",
+    solution: "We built an integration that mirrors every SYSPRO document to a client's delivery platform automatically. 25,000 stores. 15 warehouses. Zero spreadsheets. Zero people.",
   },
 ];
 
 // ============================================================================
-// FLAGSHIP CASE STUDY DETAILS
+// FLAGSHIP CASE STUDY DETAILS - Specific Proof
 // ============================================================================
 
 export const flagshipStats = [
-  { value: "1.4M", label: "Automated transactions last month" },
-  { value: "25,000", label: "Retail stores receiving deliveries" },
-  { value: "15", label: "Warehouses coordinated automatically" },
-  { value: "200+", label: "Publications processed weekly" },
-  { value: "99.9%", label: "Transaction success rate" },
+  { value: "1.4M", label: "Transactions automated monthly" },
+  { value: "25,000", label: "Retail stores coordinated" },
+  { value: "15", label: "Warehouses synced in real-time" },
   { value: "7", label: "Months from kickoff to live" },
+  { value: "99.9%", label: "Transaction success rate" },
+  { value: "R0", label: "Manual data entry cost" },
 ];
 
 export const flagshipStages = [
@@ -192,14 +242,15 @@ export const flagshipAdditionalIntegrations = [
 ];
 
 // ============================================================================
-// PRODUCTS - RSI & RSATalk
+// PRODUCTS - RSI & RSATalk (Benefits-focused, Hormozi style)
 // ============================================================================
 
 export const products = {
   rsi: {
     name: "RSI",
-    tagline: "SYSPRO Automation Engine",
-    description: "Posts to SYSPRO so your team doesn't have to. Sales orders, dispatches, invoices, credit notes, inventory adjustments, requisitions, SCTs—any business object, automated.",
+    tagline: "Your SYSPRO Runs Itself",
+    description: "RSI posts to SYSPRO so your team doesn't have to. Sales orders, dispatches, invoices, credit notes, inventory adjustments—any transaction, automated. Your people focus on exceptions. RSI handles the volume.",
+    dreamOutcome: "Imagine checking your dashboard Monday morning and seeing 50,000 transactions processed over the weekend. No overtime. No errors. No one touched a keyboard.",
     howItWorks: [
       "Receives triggers from dashboards, APIs, or schedules",
       "Executes the correct sequence of SYSPRO business object calls",
@@ -207,17 +258,18 @@ export const products = {
       "Updates source systems with results",
       "Full audit trail of every transaction",
     ],
-    proof: "1.4 million transactions posted last month for one client. 90% of our clients use RSI. Zero keystrokes, zero errors.",
-    keyCapability: '"After-post" logic—RSI can do anything after a SYSPRO transaction succeeds or fails. Auto-invoice after dispatch? Trigger an API call? Update a dashboard? It\'s configurable.',
+    proof: "1.4 million transactions posted last month for one client. 90% of our clients run RSI. Zero keystrokes, zero errors.",
+    keyCapability: '"After-post" logic—RSI can do anything after a SYSPRO transaction succeeds or fails. Auto-invoice after dispatch? Trigger an API call? Update a dashboard? Configurable.',
   },
   rsatalk: {
     name: "RSATalk",
-    tagline: "EDI & Integration Platform",
-    description: "Connects SYSPRO to retailers, couriers, APIs, and email. Fetch orders, send invoices, sync data—without building custom integrations from scratch.",
+    tagline: "Every System Talks to Every Other System",
+    description: "RSATalk connects SYSPRO to retailers, couriers, APIs, and email. Fetch orders, send invoices, sync data—without building custom integrations from scratch. One platform, unlimited connections.",
+    dreamOutcome: "Pick n Pay sends an order at 2am. By 2:01am, it's validated, posted to SYSPRO, and queued for picking. By 6am, it's dispatched and the ASN is sent. No human involved.",
     components: [
       {
         name: "EDI Engine",
-        desc: "Retailer connections (Pick n Pay, Dis-Chem, SPAR, Shoprite/Checkers, Food Lover's Market)",
+        desc: "Pick n Pay, Dis-Chem, SPAR, Shoprite/Checkers, Food Lover's Market—all connected",
       },
       {
         name: "API Automator",
@@ -225,7 +277,7 @@ export const products = {
       },
       {
         name: "Mail Service",
-        desc: "Branded emails with PDF attachments via SendGrid",
+        desc: "Branded emails with PDF attachments via SendGrid—10,000+/month for one client",
       },
       {
         name: "SFTP/File Handler",
@@ -233,13 +285,13 @@ export const products = {
       },
     ],
     proof: "10,000+ SPAR invoices emailed monthly. 58,000+ Pick n Pay orders processed. Every major SA retailer connected.",
-    keyCapability: "Validation-first EDI—bad orders (wrong GLN, invalid price, discontinued GTIN) are blocked and surfaced on dashboards, not posted to SYSPRO. Prevention, not cleanup.",
+    keyCapability: "Validation-first EDI—bad orders are blocked and surfaced on dashboards, not posted to SYSPRO. You fix problems before they become chargebacks.",
   },
-  licensingNote: "Both products are licensed separately. Use RSI alone for SYSPRO automation. Add RSATalk for retailer and external system integrations. Most clients use both.",
+  licensingNote: "Both products licensed separately. RSI for SYSPRO automation. RSATalk for external integrations. Most clients use both—that's where the magic happens.",
 };
 
 // ============================================================================
-// SOLUTIONS - FOUR WAYS TO GET YOUR TIME BACK
+// SOLUTIONS - Hormozi Style: Dream Outcome → Specific Path
 // ============================================================================
 
 export const solutions = [
@@ -247,36 +299,40 @@ export const solutions = [
     number: "01",
     title: "SYSTEM INTEGRATIONS",
     href: "/integrations",
-    destination: "Orders flow in automatically. Invoices flow out. Your systems talk to each other without you in the middle.",
+    dreamOutcome: "Orders flow in automatically. Invoices flow out. Your systems talk to each other without you in the middle.",
     how: "RSI + RSATalk power integrations across SYSPRO, Sage, and SAP. Retail EDI, courier connections, API integrations, file-based imports—whatever your systems need.",
     proof: "1.4 million transactions/month for one client. Every major SA retailer connected. TransLution partner for WMS.",
+    timeToValue: "4-8 weeks to first integration live",
     cta: "See Integration Capabilities →",
   },
   {
     number: "02",
     title: "REAL-TIME DASHBOARDS",
     href: "/dashboards",
-    destination: "Know exactly where your business stands at any moment—without asking anyone or running a report.",
+    dreamOutcome: "Know exactly where your business stands at any moment—without asking anyone or running a report.",
     how: "60+ ready-to-deploy dashboards plus custom builds. Live SYSPRO data. AR aging, inventory, orders, production—whatever you need to see.",
-    proof: "Clients save 15-20 hours/week on reporting. Month-end drops from days to hours.",
+    proof: "Clients save 15-20 hours/week on reporting. Month-end drops from 5 days to 6 hours.",
+    timeToValue: "2-4 weeks to first dashboard live",
     cta: "See Dashboard Library →",
   },
   {
     number: "03",
     title: "WORKFLOW AUTOMATION",
     href: "/automation",
-    destination: "Approvals happen without chasing. Documents generate and send themselves. Multi-step processes run unattended.",
+    dreamOutcome: "Approvals happen without chasing. Documents generate and send themselves. Multi-step processes run unattended.",
     how: "Configurable workflows triggered by SYSPRO events, schedules, or user actions. RSI handles the execution. RSATalk handles external communication.",
     proof: "10,000+ auto-generated invoices emailed monthly. PO approval workflows. Bank reconciliation automation.",
+    timeToValue: "2-6 weeks depending on complexity",
     cta: "See Automation Options →",
   },
   {
     number: "04",
     title: "CUSTOM APPLICATIONS",
     href: "/custom",
-    destination: "The exact tool your business needs—not a generic solution you have to work around.",
+    dreamOutcome: "The exact tool your business needs—not a generic solution you have to work around.",
     how: "Ordering portals, quoting systems, field apps, document management—100+ custom applications built and deployed.",
     proof: "Forecasting dashboards, EDI validation portals, mobile ePOD apps, supplier onboarding—if you can describe it, we've probably built something like it.",
+    timeToValue: "4-12 weeks depending on scope",
     cta: "Describe What You Need →",
   },
 ];
@@ -360,85 +416,126 @@ export const integrationEcosystem = {
 };
 
 // ============================================================================
-// VALUE PROPOSITION - WHY US
+// VALUE PROPOSITION - Hormozi Style: Reduce Risk, Increase Certainty
 // ============================================================================
 
 export const valueProposition = [
   {
     icon: "target",
-    title: "Your ERP Actually Works For You",
-    description: "Systems that run themselves. Data you can trust. 1.4 million transactions without a keystroke. From forecast to delivery, automated.",
+    title: "Guaranteed Results or We Keep Working",
+    description: "If you don't see measurable improvement within 90 days of go-live, we keep working at no additional cost until you do. We've never had to invoke this—but it's there.",
   },
   {
     icon: "shield",
-    title: "Proven at Scale",
-    description: "We didn't just build integrations—we rebuilt South Africa's media supply chain. SAP to SYSPRO. 7 months. 25,000 stores. If we can do that, we can handle yours.",
+    title: "Battle-Tested at Scale",
+    description: "We didn't just build integrations—we rebuilt South Africa's media supply chain. SAP to SYSPRO. 7 months. 25,000 stores. 1.4M transactions/month. If we can do that, we can handle yours.",
   },
   {
     icon: "clock",
-    title: "Results in Months, Not Years",
-    description: "Flagship project: January kickoff, August go-live. Most dashboard deployments: 2-4 weeks. Most integrations: 4-8 weeks. We've done this enough to move fast.",
+    title: "Fast Time-to-Value",
+    description: "Dashboards: 2-4 weeks. Integrations: 4-8 weeks. We've done this enough to move fast and estimate accurately. No multi-year implementations that never deliver.",
   },
   {
     icon: "zap",
-    title: "We Do The Heavy Lifting",
+    title: "We Do The Work, You See The Results",
     description: "You provide access and answer questions. We handle analysis, design, development, testing, deployment, and support. You approve; we execute.",
   },
 ];
 
 // ============================================================================
-// PROCESS - HOW IT WORKS
+// PROCESS - Hormozi Style: Make It Easy (Reduce Effort)
 // ============================================================================
 
 export const process = [
   {
     number: "01",
-    title: "Free Audit",
+    title: "Free Automation Roadmap",
     timeframe: "30 minutes",
-    description: "We analyze your current setup and identify the biggest time-wasters. You get actionable insights whether you hire us or not.",
-    effort: "One video call. Zero preparation required.",
+    description: "We analyze your current setup and identify where you're bleeding time. You get a prioritized list of automations with expected ROI—whether you hire us or not.",
+    effort: "One video call. We ask questions. You talk about your frustrations.",
+    deliverable: "Written roadmap with 3-5 quick wins and estimated savings",
   },
   {
     number: "02",
-    title: "Custom Roadmap",
-    timeframe: "Within 48 hours",
-    description: "A prioritized plan showing what to fix first, expected ROI, and realistic timelines. No 50-page proposal—just what matters.",
-    effort: "We do the analysis. You review recommendations.",
+    title: "Scope & Start",
+    timeframe: "Within 1 week",
+    description: "We turn the roadmap into a project plan. Clear scope, fixed price, guaranteed timeline. No scope creep. No surprise invoices.",
+    effort: "Review our proposal. Ask questions. Say go.",
+    deliverable: "Fixed-price proposal with guaranteed delivery date",
   },
   {
     number: "03",
-    title: "Rapid Deployment",
-    timeframe: "2-8 weeks (typical)",
-    description: "Dashboards: 2-4 weeks. Integrations: 4-8 weeks. Complex multi-stage automation: we'll scope it honestly. We've done this enough to estimate accurately.",
-    effort: "We handle implementation. Your team provides access and answers questions.",
+    title: "Rapid Build",
+    timeframe: "2-8 weeks",
+    description: "Dashboards: 2-4 weeks. Integrations: 4-8 weeks. Complex automation: we'll scope it honestly. Weekly updates so you always know where we are.",
+    effort: "Provide access. Answer questions. Review progress weekly.",
+    deliverable: "Working system in your environment",
   },
   {
     number: "04",
-    title: "Ongoing Support",
-    timeframe: "Continuous",
-    description: "We don't disappear after go-live. Your business evolves, your systems should too. RSI and RSATalk are living products—updates, optimizations, expansions.",
-    effort: "Support when you need it. Proactive recommendations. No ticket queues.",
+    title: "Go-Live & Beyond",
+    timeframe: "Ongoing",
+    description: "We don't disappear after go-live. Your business evolves, your systems should too. Proactive support. Continuous optimization.",
+    effort: "Use your new system. Tell us what's next.",
+    deliverable: "Measurable improvement within 90 days—guaranteed",
   },
 ];
 
 // ============================================================================
-// GUARANTEE
+// GUARANTEE - Hormozi Core: Remove All Risk
 // ============================================================================
 
 export const guarantee = {
-  headline: "No Improvement, No Invoice.",
-  subhead: "We're confident because we've done this at scale.",
+  headline: "The No-Risk Guarantee",
+  subhead: "We're confident because we've done this 60+ times. Here's how we back it up:",
   terms: [
-    "Start with a free 30-minute audit. Get actionable insights whether you hire us or not.",
-    "If you engage us and don't see measurable improvement within 90 days of go-live, we keep working at no additional cost until you do.",
-    "No lock-in contracts. No hidden fees. No surprises.",
+    "Free 30-minute automation audit. Get a written roadmap with 3-5 quick wins—whether you hire us or not.",
+    "Fixed-price projects. The number we quote is the number you pay. No 'change orders.' No surprise invoices.",
+    "90-day results guarantee. If you don't see measurable improvement within 90 days of go-live, we keep working at no additional cost until you do.",
+    "No lock-in contracts. Stay because we deliver, not because you're trapped.",
   ],
-  cta: "Get Your Free ERP Audit",
-  scarcity: "We onboard a maximum of 5 new clients per month to ensure quality.",
+  cta: "Get Your Free Automation Roadmap",
+  scarcity: "We onboard a maximum of 5 new clients per month to ensure quality. Currently have spots for this month.",
 };
 
 // ============================================================================
-// FEATURED CLIENTS (Updated for 2025)
+// URGENCY & SCARCITY - Hormozi: Create Ethical Urgency
+// ============================================================================
+
+export const urgencyScarcity = {
+  clientLimit: "5 new clients per month",
+  reason: "We refuse to sacrifice quality for volume. Every implementation gets senior attention.",
+  currentAvailability: "2 spots remaining for January",
+  bonusDeadline: "Book your free audit by Friday to include a complimentary EDI readiness assessment (R15,000 value)",
+};
+
+// ============================================================================
+// SOCIAL PROOF - Specific Results, Not Generic Testimonials
+// ============================================================================
+
+export const socialProof = [
+  {
+    company: "On The Dot",
+    result: "1.4 million transactions/month automated",
+    context: "SAP to SYSPRO migration in 7 months",
+    specifics: "25,000 retail stores, 15 warehouses, zero manual data entry",
+  },
+  {
+    company: "RFG (Rhodes Food Group)",
+    result: "100+ integrations, 20+ dashboards deployed",
+    context: "JSE-listed food producer",
+    specifics: "10 retailers with automated SSRS email systems",
+  },
+  {
+    company: "Libstar",
+    result: "Multi-company EDI and dashboard rollout",
+    context: "JSE-listed food company",
+    specifics: "20+ SYSPRO dashboards, multiple TransLution implementations",
+  },
+];
+
+// ============================================================================
+// FEATURED CLIENTS
 // ============================================================================
 
 export const featuredClients: Client[] = [
@@ -646,11 +743,11 @@ export const companyInfo = {
   tagline: "ERP Integration Excellence",
   email: "info@rsasoft.co.za",
   founded: 2009,
-  yearsExperience: 16, // Updated for 2025
+  yearsExperience: 16,
 };
 
 // ============================================================================
-// SERVICE CATEGORIES (For other pages)
+// SERVICE CATEGORIES
 // ============================================================================
 
 export const serviceCategories = {
@@ -741,7 +838,7 @@ export const serviceCategories = {
 };
 
 // ============================================================================
-// INTEGRATION CAPABILITIES (For Integrations Page)
+// INTEGRATION CAPABILITIES
 // ============================================================================
 
 export const integrationCapabilities = [
@@ -808,7 +905,7 @@ export const integrationCapabilities = [
 ];
 
 // ============================================================================
-// EDI FLOW (For Integrations Page)
+// EDI FLOW
 // ============================================================================
 
 export const ediFlow = {
@@ -833,7 +930,7 @@ export const ediFlow = {
 };
 
 // ============================================================================
-// INTEGRATION TIMELINE (For Integrations Page)
+// INTEGRATION TIMELINE
 // ============================================================================
 
 export const integrationTimeline = [

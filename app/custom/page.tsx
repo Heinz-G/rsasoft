@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { 
-  ArrowRight, 
-  Check, 
+import {
+  ArrowRight,
+  Check,
   ShoppingCart,
   FileText,
   Users,
@@ -236,32 +236,32 @@ const customAppCategories = [
 
 export default function CustomAppsPage() {
   return (
-    <main className="min-h-screen bg-[#0a0f14] text-slate-200">
+    <main className="min-h-screen bg-slate-950 text-slate-200">
       <Navbar />
 
       {/* Hero */}
       <section className="pt-32 pb-20 relative grid-pattern noise-overlay">
-        <div className="absolute top-1/4 right-0 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl" />
-        
+        <div className="absolute top-1/4 right-0 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl" />
+
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <p className="font-mono text-xs tracking-widest text-amber-500 mb-4">
+            <p className="font-mono text-xs tracking-widest text-teal-500 mb-4">
               100+ CUSTOM APPLICATIONS BUILT
             </p>
-            
+
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold text-slate-100 mb-6 leading-tight">
               The Exact Tool Your Business Needs
             </h1>
-            
+
             <p className="text-lg text-slate-400 mb-8 leading-relaxed">
-              Generic software forces you to change how you work. Custom applications work the way YOU work. 
+              Generic software forces you to change how you work. Custom applications work the way YOU work.
               From yacht ordering portals to transformer test bay systems—if you can describe it, we can build it.
             </p>
 
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-[#0a0f14] font-semibold px-8 py-4 rounded text-base transition-all hover:shadow-lg hover:shadow-amber-500/25"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-400 hover:to-teal-500 text-slate-950 font-semibold px-8 py-4 rounded text-base transition-all hover:shadow-lg hover:shadow-teal-500/25"
               >
                 Describe What You Need
                 <ArrowRight className="w-4 h-4" />
@@ -276,19 +276,19 @@ export default function CustomAppsPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-amber-gradient font-display text-4xl sm:text-5xl font-bold mb-2">100+</div>
+              <div className="text-teal-gradient font-display text-4xl sm:text-5xl font-bold mb-2">100+</div>
               <div className="text-slate-400">Custom Applications</div>
             </div>
             <div>
-              <div className="text-amber-gradient font-display text-4xl sm:text-5xl font-bold mb-2">15+</div>
+              <div className="text-teal-gradient font-display text-4xl sm:text-5xl font-bold mb-2">15+</div>
               <div className="text-slate-400">Years Experience</div>
             </div>
             <div>
-              <div className="text-amber-gradient font-display text-4xl sm:text-5xl font-bold mb-2">60+</div>
+              <div className="text-teal-gradient font-display text-4xl sm:text-5xl font-bold mb-2">60+</div>
               <div className="text-slate-400">Active Clients</div>
             </div>
             <div>
-              <div className="text-amber-gradient font-display text-4xl sm:text-5xl font-bold mb-2">12</div>
+              <div className="text-teal-gradient font-display text-4xl sm:text-5xl font-bold mb-2">12</div>
               <div className="text-slate-400">App Categories</div>
             </div>
           </div>
@@ -303,7 +303,7 @@ export default function CustomAppsPage() {
               What We've Built
             </h2>
             <p className="text-slate-400 max-w-2xl mx-auto">
-              Every application integrates with your ERP. Every one solves a real problem. 
+              Every application integrates with your ERP. Every one solves a real problem.
               Here's a sample of what's possible.
             </p>
           </div>
@@ -312,16 +312,16 @@ export default function CustomAppsPage() {
             {customAppCategories.map((category) => (
               <div
                 key={category.title}
-                className="bg-slate-900/50 border border-slate-700/30 rounded-lg p-6 hover:border-amber-500/30 transition-all"
+                className="bg-slate-900/50 border border-slate-700/30 rounded-lg p-6 hover:border-teal-500/30 transition-all"
               >
-                <category.icon className="w-8 h-8 text-amber-500 mb-4" />
+                <category.icon className="w-8 h-8 text-teal-500 mb-4" />
                 <h3 className="font-display text-lg font-medium text-slate-200 mb-2">
                   {category.title}
                 </h3>
                 <p className="text-sm text-slate-400 mb-4 leading-relaxed">
                   {category.description}
                 </p>
-                
+
                 <div className="mb-4">
                   <p className="text-xs text-slate-500 mb-2">Examples built:</p>
                   <div className="flex flex-wrap gap-1">
@@ -358,9 +358,9 @@ export default function CustomAppsPage() {
               <h2 className="font-display text-3xl sm:text-4xl font-semibold text-slate-100 mb-6">
                 Built For You, Not Modified For You
               </h2>
-              
+
               <p className="text-slate-400 mb-6 leading-relaxed">
-                There's a difference between "customizing" off-the-shelf software and building 
+                There's a difference between "customizing" off-the-shelf software and building
                 exactly what you need. We do the latter.
               </p>
 
@@ -411,12 +411,12 @@ export default function CustomAppsPage() {
             What Would Make Your Life Easier?
           </h2>
           <p className="text-slate-400 mb-8">
-            Describe the problem. We'll tell you if we can solve it, how long it'll take, 
+            Describe the problem. We'll tell you if we can solve it, how long it'll take,
             and what it'll cost. No obligation.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-[#0a0f14] font-semibold px-8 py-4 rounded text-base transition-all hover:shadow-lg hover:shadow-amber-500/25"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-400 hover:to-teal-500 text-slate-950 font-semibold px-8 py-4 rounded text-base transition-all hover:shadow-lg hover:shadow-teal-500/25"
           >
             Describe What You Need
             <ArrowRight className="w-4 h-4" />

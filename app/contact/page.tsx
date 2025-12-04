@@ -4,9 +4,9 @@ import { useState } from "react";
 import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { 
-  ArrowRight, 
-  Check, 
+import {
+  ArrowRight,
+  Check,
   Mail,
   Phone,
   MapPin,
@@ -35,25 +35,25 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#0a0f14] text-slate-200">
+    <main className="min-h-screen bg-slate-950 text-slate-200">
       <Navbar />
 
       {/* Hero */}
       <section className="pt-32 pb-12 relative grid-pattern noise-overlay">
-        <div className="absolute top-1/4 right-0 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl" />
-        
+        <div className="absolute top-1/4 right-0 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl" />
+
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="max-w-2xl">
-            <p className="font-mono text-xs tracking-widest text-amber-500 mb-4">
+            <p className="font-mono text-xs tracking-widest text-teal-500 mb-4">
               GET IN TOUCH
             </p>
-            
+
             <h1 className="font-display text-4xl sm:text-5xl font-semibold text-slate-100 mb-6 leading-tight">
               Book Your Free ERP Audit
             </h1>
-            
+
             <p className="text-lg text-slate-400 leading-relaxed">
-              30 minutes. Zero obligation. We'll identify where you're bleeding time and show you 
+              30 minutes. Zero obligation. We'll identify where you're bleeding time and show you
               the fix—whether you hire us or not.
             </p>
           </div>
@@ -88,7 +88,7 @@ export default function ContactPage() {
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full bg-slate-900/50 border border-slate-700/50 rounded-lg px-4 py-3 text-slate-200 placeholder:text-slate-600 focus:outline-none focus:border-amber-500/50 transition-colors"
+                        className="w-full bg-slate-900/50 border border-slate-700/50 rounded-lg px-4 py-3 text-slate-200 placeholder:text-slate-600 focus:outline-none focus:border-teal-500/50 transition-colors"
                         placeholder="John Smith"
                       />
                     </div>
@@ -101,7 +101,7 @@ export default function ContactPage() {
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full bg-slate-900/50 border border-slate-700/50 rounded-lg px-4 py-3 text-slate-200 placeholder:text-slate-600 focus:outline-none focus:border-amber-500/50 transition-colors"
+                        className="w-full bg-slate-900/50 border border-slate-700/50 rounded-lg px-4 py-3 text-slate-200 placeholder:text-slate-600 focus:outline-none focus:border-teal-500/50 transition-colors"
                         placeholder="john@company.com"
                       />
                     </div>
@@ -117,7 +117,7 @@ export default function ContactPage() {
                         required
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                        className="w-full bg-slate-900/50 border border-slate-700/50 rounded-lg px-4 py-3 text-slate-200 placeholder:text-slate-600 focus:outline-none focus:border-amber-500/50 transition-colors"
+                        className="w-full bg-slate-900/50 border border-slate-700/50 rounded-lg px-4 py-3 text-slate-200 placeholder:text-slate-600 focus:outline-none focus:border-teal-500/50 transition-colors"
                         placeholder="Acme Manufacturing"
                       />
                     </div>
@@ -129,7 +129,7 @@ export default function ContactPage() {
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full bg-slate-900/50 border border-slate-700/50 rounded-lg px-4 py-3 text-slate-200 placeholder:text-slate-600 focus:outline-none focus:border-amber-500/50 transition-colors"
+                        className="w-full bg-slate-900/50 border border-slate-700/50 rounded-lg px-4 py-3 text-slate-200 placeholder:text-slate-600 focus:outline-none focus:border-teal-500/50 transition-colors"
                         placeholder="+27 82 123 4567"
                       />
                     </div>
@@ -143,7 +143,7 @@ export default function ContactPage() {
                       required
                       value={formData.interest}
                       onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
-                      className="w-full bg-slate-900/50 border border-slate-700/50 rounded-lg px-4 py-3 text-slate-200 focus:outline-none focus:border-amber-500/50 transition-colors"
+                      className="w-full bg-slate-900/50 border border-slate-700/50 rounded-lg px-4 py-3 text-slate-200 focus:outline-none focus:border-teal-500/50 transition-colors"
                     >
                       <option value="">Select an option</option>
                       <option value="dashboards">SYSPRO Dashboards</option>
@@ -163,14 +163,14 @@ export default function ContactPage() {
                       rows={4}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full bg-slate-900/50 border border-slate-700/50 rounded-lg px-4 py-3 text-slate-200 placeholder:text-slate-600 focus:outline-none focus:border-amber-500/50 transition-colors resize-none"
+                      className="w-full bg-slate-900/50 border border-slate-700/50 rounded-lg px-4 py-3 text-slate-200 placeholder:text-slate-600 focus:outline-none focus:border-teal-500/50 transition-colors resize-none"
                       placeholder="What problems are you trying to solve? What does your current SYSPRO setup look like?"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-[#0a0f14] font-medium px-8 py-4 rounded text-base transition-all hover:shadow-lg hover:shadow-amber-500/25"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-400 hover:to-teal-500 text-slate-950 font-medium px-8 py-4 rounded text-base transition-all hover:shadow-lg hover:shadow-teal-500/25"
                   >
                     Submit Request
                     <ArrowRight className="w-4 h-4" />
@@ -193,7 +193,7 @@ export default function ContactPage() {
                     { icon: MessageSquare, text: "We'll identify 3-5 quick wins for your SYSPRO" },
                   ].map((item, i) => (
                     <div key={i} className="flex gap-3">
-                      <item.icon className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
+                      <item.icon className="w-5 h-5 text-teal-500 flex-shrink-0 mt-0.5" />
                       <span className="text-sm text-slate-400">{item.text}</span>
                     </div>
                   ))}
@@ -207,19 +207,19 @@ export default function ContactPage() {
                 </h3>
                 <div className="space-y-4">
                   <div className="flex gap-3">
-                    <Mail className="w-5 h-5 text-amber-500 flex-shrink-0" />
+                    <Mail className="w-5 h-5 text-teal-500 flex-shrink-0" />
                     <div>
                       <p className="text-sm text-slate-500">Email</p>
-                      <a 
-                        href="mailto:info@rsasoft.co.za" 
-                        className="text-slate-300 hover:text-amber-400 transition-colors"
+                      <a
+                        href="mailto:info@rsasoft.co.za"
+                        className="text-slate-300 hover:text-teal-400 transition-colors"
                       >
                         info@rsasoft.co.za
                       </a>
                     </div>
                   </div>
                   <div className="flex gap-3">
-                    <MapPin className="w-5 h-5 text-amber-500 flex-shrink-0" />
+                    <MapPin className="w-5 h-5 text-teal-500 flex-shrink-0" />
                     <div>
                       <p className="text-sm text-slate-500">Location</p>
                       <p className="text-slate-300">South Africa</p>
@@ -235,7 +235,7 @@ export default function ContactPage() {
                   Our Guarantee
                 </h3>
                 <p className="text-sm text-slate-400">
-                  If you don't see measurable improvement within 90 days of go-live, we keep 
+                  If you don't see measurable improvement within 90 days of go-live, we keep
                   working at no additional cost until you do. No risk, no excuses.
                 </p>
               </div>
