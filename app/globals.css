@@ -6,26 +6,26 @@
 
 @layer base {
   :root {
-    /* Control Room Dark Theme - Slate + Amber */
-    --background: 210 30% 4%;
-    --foreground: 210 20% 90%;
-    --card: 210 25% 7%;
-    --card-foreground: 210 20% 90%;
-    --popover: 210 25% 7%;
-    --popover-foreground: 210 20% 90%;
-    --primary: 38 92% 50%;
-    --primary-foreground: 210 30% 4%;
-    --secondary: 210 20% 12%;
-    --secondary-foreground: 210 20% 90%;
-    --muted: 210 20% 15%;
-    --muted-foreground: 210 15% 55%;
-    --accent: 38 92% 50%;
-    --accent-foreground: 210 30% 4%;
+    /* RSASoft Blue/Teal Theme - Professional & Trustworthy */
+    --background: 210 25% 8%;
+    --foreground: 200 20% 92%;
+    --card: 210 22% 11%;
+    --card-foreground: 200 20% 92%;
+    --popover: 210 22% 11%;
+    --popover-foreground: 200 20% 92%;
+    --primary: 185 70% 45%;
+    --primary-foreground: 210 25% 8%;
+    --secondary: 210 20% 14%;
+    --secondary-foreground: 200 20% 92%;
+    --muted: 210 18% 18%;
+    --muted-foreground: 200 15% 55%;
+    --accent: 185 70% 45%;
+    --accent-foreground: 210 25% 8%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 210 20% 15%;
-    --input: 210 20% 15%;
-    --ring: 38 92% 50%;
+    --border: 210 18% 18%;
+    --input: 210 18% 18%;
+    --ring: 185 70% 45%;
     --radius: 0.5rem;
   }
 }
@@ -57,8 +57,8 @@
   /* Geometric grid pattern background */
   .grid-pattern {
     background-image: 
-      linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+      linear-gradient(rgba(56, 189, 248, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
     background-size: 60px 60px;
   }
   
@@ -77,21 +77,42 @@
     z-index: 0;
   }
   
-  /* Amber gradient text for stats */
-  .text-amber-gradient {
-    background: linear-gradient(180deg, #fbbf24 0%, #f59e0b 100%);
+  /* Teal gradient text for stats */
+  .text-teal-gradient {
+    background: linear-gradient(180deg, #5eead4 0%, #14b8a6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   
-  /* Amber glow effect for primary CTAs */
-  .amber-glow {
-    box-shadow: 0 0 40px rgba(245, 158, 11, 0.15);
+  /* Blue gradient text for stats */
+  .text-blue-gradient {
+    background: linear-gradient(180deg, #38bdf8 0%, #0ea5e9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
   
-  .amber-glow-strong {
-    box-shadow: 0 0 60px rgba(245, 158, 11, 0.25);
+  /* Primary gradient for accent text */
+  .text-primary-gradient {
+    background: linear-gradient(135deg, #14b8a6 0%, #0ea5e9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Teal glow effect for primary CTAs */
+  .teal-glow {
+    box-shadow: 0 0 40px rgba(20, 184, 166, 0.15);
+  }
+  
+  .teal-glow-strong {
+    box-shadow: 0 0 60px rgba(20, 184, 166, 0.25);
+  }
+  
+  /* Blue glow effect */
+  .blue-glow {
+    box-shadow: 0 0 40px rgba(14, 165, 233, 0.15);
   }
 }
 
@@ -133,7 +154,7 @@
   transform: translateY(0);
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - Blue/Teal theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -143,10 +164,10 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(245, 158, 11, 0.3);
+  background: rgba(20, 184, 166, 0.3);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(245, 158, 11, 0.5);
+  background: rgba(20, 184, 166, 0.5);
 }

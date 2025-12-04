@@ -3,14 +3,14 @@ import { Award, Mail, MapPin } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="border-t border-slate-800/50 py-16 bg-[#0a0f14]">
+    <footer className="border-t border-slate-800/50 py-16 bg-slate-950">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Company */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-amber-500 to-amber-600 rounded flex items-center justify-center">
-                <span className="font-display font-bold text-[#0a0f14] text-sm">R</span>
+              <div className="w-8 h-8 bg-gradient-to-br from-teal-500 to-teal-600 rounded flex items-center justify-center">
+                <span className="font-display font-bold text-slate-950 text-sm">R</span>
               </div>
               <span className="font-display text-lg font-semibold text-slate-200">RSASoft</span>
             </div>
@@ -19,9 +19,9 @@ export function Footer() {
               and workflow automation for manufacturers and distributors.
             </p>
             {/* Award badge */}
-            <div className="flex items-center gap-2 px-3 py-2 bg-amber-500/10 border border-amber-500/30 rounded-lg">
-              <Award className="w-4 h-4 text-amber-500" />
-              <span className="text-xs text-amber-400">SYSPRO Integration Award 2025</span>
+            <div className="flex items-center gap-2 px-3 py-2 bg-teal-500/10 border border-teal-500/30 rounded-lg">
+              <Award className="w-4 h-4 text-teal-500" />
+              <span className="text-xs text-teal-400">SYSPRO Integration Award 2025</span>
             </div>
           </div>
 
@@ -30,22 +30,22 @@ export function Footer() {
             <h4 className="font-medium text-slate-300 mb-4">Solutions</h4>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link href="/dashboards" className="text-slate-500 hover:text-amber-400 transition-colors">
+                <Link href="/dashboards" className="text-slate-500 hover:text-teal-400 transition-colors">
                   SYSPRO Dashboards
                 </Link>
               </li>
               <li>
-                <Link href="/integrations" className="text-slate-500 hover:text-amber-400 transition-colors">
+                <Link href="/integrations" className="text-slate-500 hover:text-teal-400 transition-colors">
                   EDI & Integrations
                 </Link>
               </li>
               <li>
-                <Link href="/automation" className="text-slate-500 hover:text-amber-400 transition-colors">
+                <Link href="/automation" className="text-slate-500 hover:text-teal-400 transition-colors">
                   Workflow Automation
                 </Link>
               </li>
               <li>
-                <Link href="/warehouse" className="text-slate-500 hover:text-amber-400 transition-colors">
+                <Link href="/warehouse" className="text-slate-500 hover:text-teal-400 transition-colors">
                   Warehouse Solutions
                 </Link>
               </li>
@@ -57,17 +57,17 @@ export function Footer() {
             <h4 className="font-medium text-slate-300 mb-4">Company</h4>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link href="/about" className="text-slate-500 hover:text-amber-400 transition-colors">
+                <Link href="/about" className="text-slate-500 hover:text-teal-400 transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/clients" className="text-slate-500 hover:text-amber-400 transition-colors">
+                <Link href="/clients" className="text-slate-500 hover:text-teal-400 transition-colors">
                   Our Clients
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-slate-500 hover:text-amber-400 transition-colors">
+                <Link href="/contact" className="text-slate-500 hover:text-teal-400 transition-colors">
                   Contact
                 </Link>
               </li>
@@ -79,13 +79,13 @@ export function Footer() {
             <h4 className="font-medium text-slate-300 mb-4">Contact</h4>
             <ul className="space-y-3 text-sm text-slate-500">
               <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-amber-500" />
-                <a href="mailto:info@rsasoft.co.za" className="hover:text-amber-400 transition-colors">
+                <Mail className="w-4 h-4 text-teal-500" />
+                <a href="mailto:info@rsasoft.co.za" className="hover:text-teal-400 transition-colors">
                   info@rsasoft.co.za
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-amber-500" />
+                <MapPin className="w-4 h-4 text-teal-500" />
                 <span>South Africa</span>
               </li>
             </ul>

@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { 
-  ArrowRight, 
-  Check, 
+import {
+  ArrowRight,
+  Check,
   ShoppingCart,
   Truck,
   FileText,
@@ -103,39 +103,39 @@ const integrationTypes = [
 
 export default function IntegrationsPage() {
   return (
-    <main className="min-h-screen bg-[#0a0f14] text-slate-200">
+    <main className="min-h-screen bg-slate-950 text-slate-200">
       <Navbar />
 
       {/* Hero */}
       <section className="pt-32 pb-20 relative grid-pattern noise-overlay">
-        <div className="absolute top-1/4 right-0 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl" />
-        
+        <div className="absolute top-1/4 right-0 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl" />
+
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/10 border border-amber-500/30 rounded-full mb-6">
-              <Award className="w-4 h-4 text-amber-500" />
-              <span className="text-sm text-amber-400 font-medium">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-teal-500/10 border border-teal-500/30 rounded-full mb-6">
+              <Award className="w-4 h-4 text-teal-500" />
+              <span className="text-sm text-teal-400 font-medium">
                 SYSPRO Integration Excellence Award 2024
               </span>
             </div>
 
-            <p className="font-mono text-xs tracking-widest text-amber-500 mb-4">
+            <p className="font-mono text-xs tracking-widest text-teal-500 mb-4">
               SYSTEM INTEGRATIONS
             </p>
-            
+
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold text-slate-100 mb-6 leading-tight">
               Connect Everything. Automate Everything.
             </h1>
-            
+
             <p className="text-lg text-slate-400 mb-8 leading-relaxed">
-              Retail EDI. Multi-ERP support. TransLution WMS. n8n automation. 
+              Retail EDI. Multi-ERP support. TransLution WMS. n8n automation.
               We build the bridges between your systems so data flows without you in the middle.
             </p>
 
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-[#0a0f14] font-semibold px-8 py-4 rounded text-base transition-all hover:shadow-lg hover:shadow-amber-500/25"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-400 hover:to-teal-500 text-slate-950 font-semibold px-8 py-4 rounded text-base transition-all hover:shadow-lg hover:shadow-teal-500/25"
               >
                 Discuss Your Integration
                 <ArrowRight className="w-4 h-4" />
@@ -152,7 +152,7 @@ export default function IntegrationsPage() {
             {/* ERP Systems */}
             <div className="bg-slate-900/80 border border-slate-700/30 rounded-lg p-6">
               <h3 className="font-display text-lg font-medium text-slate-200 mb-4 flex items-center gap-2">
-                <Database className="w-5 h-5 text-amber-500" />
+                <Database className="w-5 h-5 text-teal-500" />
                 ERP Systems
               </h3>
               <div className="space-y-4">
@@ -173,7 +173,7 @@ export default function IntegrationsPage() {
             {/* Partnerships */}
             <div className="bg-slate-900/80 border border-slate-700/30 rounded-lg p-6">
               <h3 className="font-display text-lg font-medium text-slate-200 mb-4 flex items-center gap-2">
-                <Zap className="w-5 h-5 text-amber-500" />
+                <Zap className="w-5 h-5 text-teal-500" />
                 Technology Partners
               </h3>
               <div className="space-y-4">
@@ -181,7 +181,7 @@ export default function IntegrationsPage() {
                   <div key={partner.name}>
                     <div className="flex justify-between items-center mb-1">
                       <span className="text-slate-300 font-medium">{partner.name}</span>
-                      <span className="text-xs text-amber-400">{partner.type}</span>
+                      <span className="text-xs text-teal-400">{partner.type}</span>
                     </div>
                     <p className="text-xs text-slate-500">{partner.description}</p>
                   </div>
@@ -192,7 +192,7 @@ export default function IntegrationsPage() {
             {/* Retailers */}
             <div className="bg-slate-900/80 border border-slate-700/30 rounded-lg p-6">
               <h3 className="font-display text-lg font-medium text-slate-200 mb-4 flex items-center gap-2">
-                <Building2 className="w-5 h-5 text-amber-500" />
+                <Building2 className="w-5 h-5 text-teal-500" />
                 Retail EDI
               </h3>
               <div className="space-y-2">
@@ -211,21 +211,21 @@ export default function IntegrationsPage() {
       {/* Flagship Case Study */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="bg-slate-900/80 border border-amber-500/30 rounded-2xl p-8 lg:p-12">
+          <div className="bg-slate-900/80 border border-teal-500/30 rounded-2xl p-8 lg:p-12">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="flex items-center gap-2 mb-4">
-                  <Award className="w-5 h-5 text-amber-500" />
-                  <p className="font-mono text-xs tracking-widest text-amber-500">FLAGSHIP PROJECT</p>
+                  <Award className="w-5 h-5 text-teal-500" />
+                  <p className="font-mono text-xs tracking-widest text-teal-500">FLAGSHIP PROJECT</p>
                 </div>
-                
+
                 <h2 className="font-display text-3xl sm:text-4xl font-semibold text-slate-100 mb-6">
                   South Africa's Largest Media Logistics Integration
                 </h2>
-                
+
                 <p className="text-slate-400 mb-6 leading-relaxed">
-                  A major media distributor processes 95% of SA's magazines and 68% of newspapers 
-                  through 22,000 retail outlets. They needed bulletproof Pick n Pay EDI integration 
+                  A major media distributor processes 95% of SA's magazines and 68% of newspapers
+                  through 22,000 retail outlets. They needed bulletproof Pick n Pay EDI integration
                   and automated SPAR invoice distribution.
                 </p>
 
@@ -247,19 +247,19 @@ export default function IntegrationsPage() {
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-slate-800/50 rounded-lg p-6 text-center">
-                  <div className="text-amber-gradient font-display text-3xl font-bold mb-1">58K+</div>
+                  <div className="text-teal-gradient font-display text-3xl font-bold mb-1">58K+</div>
                   <div className="text-xs text-slate-400">Pick n Pay POs</div>
                 </div>
                 <div className="bg-slate-800/50 rounded-lg p-6 text-center">
-                  <div className="text-amber-gradient font-display text-3xl font-bold mb-1">460K+</div>
+                  <div className="text-teal-gradient font-display text-3xl font-bold mb-1">460K+</div>
                   <div className="text-xs text-slate-400">Sales Orders</div>
                 </div>
                 <div className="bg-slate-800/50 rounded-lg p-6 text-center">
-                  <div className="text-amber-gradient font-display text-3xl font-bold mb-1">10K+</div>
+                  <div className="text-teal-gradient font-display text-3xl font-bold mb-1">10K+</div>
                   <div className="text-xs text-slate-400">Emails/Month</div>
                 </div>
                 <div className="bg-slate-800/50 rounded-lg p-6 text-center">
-                  <div className="text-amber-gradient font-display text-3xl font-bold mb-1">100%</div>
+                  <div className="text-teal-gradient font-display text-3xl font-bold mb-1">100%</div>
                   <div className="text-xs text-slate-400">Uptime</div>
                 </div>
               </div>
@@ -272,7 +272,7 @@ export default function IntegrationsPage() {
       <section className="py-20 bg-slate-900/30">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
-            <p className="font-mono text-xs tracking-widest text-amber-500 mb-4">INTEGRATION CAPABILITIES</p>
+            <p className="font-mono text-xs tracking-widest text-teal-500 mb-4">INTEGRATION CAPABILITIES</p>
             <h2 className="font-display text-3xl sm:text-4xl font-semibold text-slate-100 mb-4">
               Every Way to Connect
             </h2>
@@ -285,9 +285,9 @@ export default function IntegrationsPage() {
             {integrationTypes.map((type) => (
               <div
                 key={type.title}
-                className="bg-slate-900/80 border border-slate-700/30 rounded-lg p-6 hover:border-amber-500/30 transition-all"
+                className="bg-slate-900/80 border border-slate-700/30 rounded-lg p-6 hover:border-teal-500/30 transition-all"
               >
-                <type.icon className="w-8 h-8 text-amber-500 mb-4" />
+                <type.icon className="w-8 h-8 text-teal-500 mb-4" />
                 <h3 className="font-display text-lg font-medium text-slate-200 mb-2">
                   {type.title}
                 </h3>
@@ -316,9 +316,9 @@ export default function IntegrationsPage() {
               <h2 className="font-display text-3xl sm:text-4xl font-semibold text-slate-100 mb-6">
                 Results in Weeks, Not Months
               </h2>
-              
+
               <p className="text-slate-400 mb-6 leading-relaxed">
-                We've done this so many times we've eliminated the guesswork. 
+                We've done this so many times we've eliminated the guesswork.
                 Here's a realistic timeline for most integration projects.
               </p>
 
@@ -341,7 +341,7 @@ export default function IntegrationsPage() {
                   },
                 ].map((item) => (
                   <div key={item.title} className="flex gap-4">
-                    <item.icon className="w-6 h-6 text-amber-500 flex-shrink-0 mt-1" />
+                    <item.icon className="w-6 h-6 text-teal-500 flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="font-medium text-slate-200 mb-1">{item.title}</h3>
                       <p className="text-slate-400 text-sm">{item.desc}</p>
@@ -365,7 +365,7 @@ export default function IntegrationsPage() {
                 ].map((phase) => (
                   <div key={phase.phase} className="flex justify-between items-center py-3 border-b border-slate-700/30">
                     <span className="text-slate-300">{phase.phase}</span>
-                    <span className="text-amber-400 font-mono text-sm">{phase.weeks}</span>
+                    <span className="text-teal-400 font-mono text-sm">{phase.weeks}</span>
                   </div>
                 ))}
               </div>
@@ -384,12 +384,12 @@ export default function IntegrationsPage() {
             What Systems Do You Need to Connect?
           </h2>
           <p className="text-slate-400 mb-8">
-            Tell us what you're working with. We'll map out exactly how it connects 
+            Tell us what you're working with. We'll map out exactly how it connects
             and give you a realistic timeline.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-[#0a0f14] font-semibold px-8 py-4 rounded text-base transition-all hover:shadow-lg hover:shadow-amber-500/25"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-400 hover:to-teal-500 text-slate-950 font-semibold px-8 py-4 rounded text-base transition-all hover:shadow-lg hover:shadow-teal-500/25"
           >
             Discuss Your Integration
             <ArrowRight className="w-4 h-4" />
