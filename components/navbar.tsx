@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Menu, X, Award, ChevronRight } from "lucide-react";
 
 // Define the type
-export type CopyVersion = "full" | "short";
+export type CopyVersion = "full" | "safe";
 
 // Define props interface
 interface NavbarProps {
